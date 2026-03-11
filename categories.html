@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories | WebStore Hub</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .category-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--card-radius);
+            padding: 40px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            height: 100%;
+        }
+        .category-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--brand-primary);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-grid-fill"></i>
+                WebStore Hub
+            </a>
+            
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Desktop Nav -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                            <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="explore.html">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link nav-link px-0" id="themeToggle">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-outline-primary px-4">Login</a>
+                    <a href="register.html" class="btn btn-primary px-4">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold">WebStore Hub</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle py-3 border-bottom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Home
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm bg-light">
+                        <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                        <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="explore.html">Explore</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom active" href="categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <div class="d-grid gap-2">
+                <a href="login.html" class="btn btn-outline-primary">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+                <button class="btn btn-outline-secondary" id="offcanvasThemeToggle">
+                    <i class="bi bi-moon-stars-fill me-2"></i> Toggle Dark / Light Mode
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h1 class="fw-bold">Browse by Category</h1>
+            <p class="text-secondary">Find exactly what you're looking for by exploring our categories.</p>
+        </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <main class="container py-5">
+        <div class="row g-4">
+            <!-- AI Tools -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="category-card" onclick="location.href='explore.html?cat=ai'">
+                    <i class="bi bi-cpu category-icon"></i>
+                    <h3 class="h5 mb-0">AI Tools</h3>
+                </div>
+            </div>
+            <!-- Design -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="category-card" onclick="location.href='explore.html?cat=design'">
+                    <i class="bi bi-palette category-icon"></i>
+                    <h3 class="h5 mb-0">Design Tools</h3>
+                </div>
+            </div>
+            <!-- Productivity -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="category-card" onclick="location.href='explore.html?cat=productivity'">
+                    <i class="bi bi-lightning-charge category-icon"></i>
+                    <h3 class="h5 mb-0">Productivity</h3>
+                </div>
+            </div>
+            <!-- Developer -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="category-card" onclick="location.href='explore.html?cat=dev'">
+                    <i class="bi bi-code-slash category-icon"></i>
+                    <h3 class="h5 mb-0">Developer</h3>
+                </div>
+            </div>
+            <!-- Entertainment -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="category-card" onclick="location.href='explore.html?cat=entertainment'">
+                    <i class="bi bi-controller category-icon"></i>
+                    <h3 class="h5 mb-0">Entertainment</h3>
+                </div>
+            </div>
+            <!-- Education -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="category-card" onclick="location.href='explore.html?cat=education'">
+                    <i class="bi bi-book category-icon"></i>
+                    <h3 class="h5 mb-0">Education</h3>
+                </div>
+            </div>
+            <!-- Finance -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="category-card" onclick="location.href='explore.html?cat=finance'">
+                    <i class="bi bi-bank category-icon"></i>
+                    <h3 class="h5 mb-0">Finance</h3>
+                </div>
+            </div>
+            <!-- Marketing -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="category-card" onclick="location.href='explore.html?cat=marketing'">
+                    <i class="bi bi-megaphone category-icon"></i>
+                    <h3 class="h5 mb-0">Marketing</h3>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Section 1: Top App Categories -->
+    <section class="py-5 shadow-sm border-top border-bottom" style="background: var(--bg-color);">
+        <div class="container">
+            <h2 class="h4 fw-bold mb-4">Discover Top App Categories</h2>
+            <div class="row g-3">
+                <div class="col-lg-4 col-md-6">
+                    <div class="p-3 border rounded-3 d-flex align-items-center gap-3 category-list-item">
+                        <div class="flex-shrink-0 bg-primary-subtle text-primary p-3 rounded-circle">
+                            <i class="bi bi-robot fs-4"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">Artificial Intelligence</h5>
+                            <small class="text-secondary">Generative AI, LLMs, Chatbots</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="p-3 border rounded-3 d-flex align-items-center gap-3 category-list-item">
+                        <div class="flex-shrink-0 bg-info-subtle text-info p-3 rounded-circle">
+                            <i class="bi bi-cloud-check fs-4"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">Cloud Computing</h5>
+                            <small class="text-secondary">AWS, Azure, Google Cloud</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="p-3 border rounded-3 d-flex align-items-center gap-3 category-list-item">
+                        <div class="flex-shrink-0 bg-warning-subtle text-warning p-3 rounded-circle">
+                            <i class="bi bi-shield-lock fs-4"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">Cyber Security</h5>
+                            <small class="text-secondary">VPN, Firewall, Encryption</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Specialized Solutions -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="h4 fw-bold mb-4">Specialized Tech Solutions</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card border-0 specialized-card p-4 rounded-4">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-window-sidebar fs-1 text-primary"></i>
+                            <div>
+                                <h4 class="fw-bold">UI/UX & Design Systems</h4>
+                                <p class="text-secondary">Access a library of figma plugins, design tokens, and accessibility tools for modern product design.</p>
+                                <a href="#" class="text-primary fw-600 text-decoration-none d-inline-flex align-items-center gap-2">Browse 120+ Apps <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 specialized-card p-4 rounded-4">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-terminal-fill fs-1 text-primary"></i>
+                            <div>
+                                <h4 class="fw-bold">DevOps & CI/CD</h4>
+                                <p class="text-secondary">Automate your workflow with industry-leading integration tools, monitoring scripts, and deployment hooks.</p>
+                                <a href="#" class="text-primary fw-600 text-decoration-none d-inline-flex align-items-center gap-2">Browse 85+ Apps <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Industry Specific -->
+    <section class="py-5 mb-5 industry-spotlight-card text-white rounded-5 mx-2 mx-md-5">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill">Specialized Sectors</span>
+                    <h2 class="h1 fw-bold mb-3 text-white">Empowering Your Industry</h2>
+                    <p class="text-white-50 mb-4 fs-5">We've curated tools specifically for regulated industries and government sectors, ensuring your digital transformation is secure, compliant, and efficient.</p>
+                    
+                    <div class="row g-4 mb-4">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-shield-check text-success fs-4"></i>
+                                <span class="fw-bold text-white">Top Security</span>
+                            </div>
+                            <small class="text-white-50">Enterprise-grade encryption for all regulated workflows.</small>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-patch-check text-info fs-4"></i>
+                                <span class="fw-bold text-white">Full Compliance</span>
+                            </div>
+                            <small class="text-white-50">Tools pre-certified for GDPR, HIPAA, and ISO standards.</small>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-2 mb-5">
+                        <span class="badge border border-white border-opacity-25 bg-white bg-opacity-10 px-3 py-2 rounded-pill">Healthcare</span>
+                        <span class="badge border border-white border-opacity-25 bg-white bg-opacity-10 px-3 py-2 rounded-pill">GovTech</span>
+                        <span class="badge border border-white border-opacity-25 bg-white bg-opacity-10 px-3 py-2 rounded-pill">FinTech</span>
+                        <span class="badge border border-white border-opacity-25 bg-white bg-opacity-10 px-3 py-2 rounded-pill">EduTech</span>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-primary btn-lg rounded-pill px-4">Explore Sector Tools</button>
+                        <button class="btn btn-outline-light btn-lg rounded-pill px-4">Compliance Help</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="industry-3d-scene-wrapper">
+                        <div class="industry-3d-core"></div>
+                        <div class="industry-3d-scene">
+                            <!-- Card 1: Finance -->
+                            <div class="industry-3d-card card-1">
+                                <i class="bi bi-bank"></i>
+                                <span>FinTech</span>
+                            </div>
+                            <!-- Card 2: Health -->
+                            <div class="industry-3d-card card-2">
+                                <i class="bi bi-heart-pulse"></i>
+                                <span>Healthcare</span>
+                            </div>
+                            <!-- Card 3: Gov -->
+                            <div class="industry-3d-card card-3">
+                                <i class="bi bi-building-gear"></i>
+                                <span>GovTech</span>
+                            </div>
+                            <!-- Card 4: Edu -->
+                            <div class="industry-3d-card card-4">
+                                <i class="bi bi-book"></i>
+                                <span>EduTech</span>
+                            </div>
+                            <!-- Card 5: Tech -->
+                            <div class="industry-3d-card card-5">
+                                <i class="bi bi-cpu"></i>
+                                <span>RegTech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <a class="navbar-brand mb-3 d-inline-block" href="#">
+                        <i class="bi bi-grid-fill"></i> WebStore Hub
+                    </a>
+                    <p class="text-secondary small">Your ultimate destination to discover and explore the world's most popular websites and tools.</p>
+                    <div class="d-flex gap-3 fs-5 mt-3">
+                        <a href="#" class="text-secondary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Top Categories</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">AI Tools</a></li>
+                        <li><a href="#">Productivity</a></li>
+                        <li><a href="#">Design Tools</a></li>
+                        <li><a href="#">Developer Tools</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="text-secondary small mb-3">Subscribe to get new tools directly in your inbox.</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 border-color">
+            <p class="text-center text-secondary small mb-0">© 2026 WebStore Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

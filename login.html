@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | WebStore Hub</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, var(--bg-color) 0%, #e0e7ff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        [data-bs-theme="dark"] body {
+            background: linear-gradient(135deg, var(--bg-color) 0%, #1e1b4b 100%);
+        }
+        .login-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            animation: zoomIn 0.5s ease-out;
+        }
+        .form-control {
+            padding: 12px 20px;
+            border-radius: 12px;
+            background-color: var(--bg-color);
+            border-color: var(--border-color);
+            color: var(--text-primary);
+        }
+        .form-control:focus {
+            background-color: var(--bg-color);
+            border-color: var(--brand-primary);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="text-center mb-5">
+            <a href="index.html" class="navbar-brand justify-content-center mb-4">
+                <i class="bi bi-grid-fill"></i> WebStore Hub
+            </a>
+            <h3 class="fw-bold">Welcome Back</h3>
+            <p class="text-secondary">Please enter your details</p>
+        </div>
+
+        <form action="dashboard.html">
+            <div class="mb-4">
+                <label class="form-label fw-medium">Email Address</label>
+                <input type="email" class="form-control" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-4">
+                <div class="d-flex justify-content-between">
+                    <label class="form-label fw-medium">Password</label>
+                    <a href="#" class="small text-primary fw-medium">Forgot password?</a>
+                </div>
+                <input type="password" class="form-control" placeholder="••••••••" required>
+            </div>
+            <div class="mb-4 form-check">
+                <input type="checkbox" class="form-check-input" id="remember">
+                <label class="form-check-label small text-secondary" for="remember">Remember for 30 days</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold">Sign In</button>
+        </form>
+
+        <div class="text-center mt-5">
+            <p class="text-secondary small">Don't have an account? <a href="register.html" class="text-primary fw-bold">Sign up for free</a></p>
+        </div>
+    </div>
+
+    <!-- Theme Toggle Fixed -->
+    <button class="btn btn-link position-fixed bottom-0 end-0 m-4 text-secondary" id="themeToggle">
+        <i class="bi bi-moon-stars-fill fs-4"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

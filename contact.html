@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | WebStore Hub</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .contact-hero {
+            padding: 100px 0;
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), 
+                        url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1200&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-contact-icons {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .contact-icon-float {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--brand-primary);
+            opacity: 0.2;
+            animation: floatContact 10s infinite ease-in-out;
+        }
+
+        @keyframes floatContact {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-50px) rotate(20deg); }
+        }
+
+        .glass-form-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 40px;
+        }
+
+        .contact-method-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            transition: var(--transition);
+            text-align: center;
+            height: 100%;
+        }
+
+        .contact-method-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--brand-primary);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+        }
+
+        .orbit-container {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .orbit-item {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: var(--card-bg);
+            border: 2px solid var(--brand-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--brand-primary);
+            animation: orbitAnim 15s infinite linear;
+        }
+
+        @keyframes orbitAnim {
+            from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+
+        .mosaic-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            border-left: 5px solid var(--brand-primary);
+            transition: var(--transition);
+        }
+
+        .mosaic-card:hover {
+            background: var(--brand-primary);
+            color: white !important;
+        }
+
+        .mosaic-card:hover p, .mosaic-card:hover h5 { color: white !important; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-grid-fill"></i>
+                WebStore Hub
+            </a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                            <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="explore.html">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link nav-link px-0" id="themeToggle">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-outline-primary px-4">Login</a>
+                    <a href="register.html" class="btn btn-primary px-4">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold">WebStore Hub</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle py-3 border-bottom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Home
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm bg-light">
+                        <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                        <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="explore.html">Explore</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom active" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <div class="d-grid gap-2">
+                <a href="login.html" class="btn btn-outline-primary">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+                <button class="btn btn-outline-secondary" id="offcanvasThemeToggle">
+                    <i class="bi bi-moon-stars-fill me-2"></i> Toggle Dark / Light Mode
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 1: Interactive Hero -->
+    <header class="contact-hero">
+        <div class="floating-contact-icons">
+            <i class="bi bi-envelope-at contact-icon-float" style="top: 10%; left: 10%;"></i>
+            <i class="bi bi-chat-dots contact-icon-float" style="top: 20%; right: 15%; animation-delay: -2s;"></i>
+            <i class="bi bi-headset contact-icon-float" style="bottom: 15%; left: 20%; animation-delay: -4s;"></i>
+            <i class="bi bi-phone-vibrate contact-icon-float" style="bottom: 20%; right: 10%; animation-delay: -6s;"></i>
+        </div>
+        <div class="container position-relative z-1 text-center">
+            <span class="badge rounded-pill bg-primary bg-opacity-20 text-primary px-3 py-2 mb-4">Get In Touch</span>
+            <h1 class="display-3 fw-bold mb-3">Let's Start a <span class="text-primary">Conversation</span></h1>
+            <p class="lead text-white-50 mx-auto mb-0" style="max-width: 600px;">Have questions about a listing? Interested in a partnership? We're here to help you navigate the future of tools.</p>
+        </div>
+    </header>
+
+    <!-- Section 2: Glassmorphism Contact Form & Details -->
+    <section class="py-5 mt-5 position-relative">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-5">
+                    <div class="h-100 d-flex flex-column gap-3">
+                        <div class="contact-method-card">
+                            <i class="bi bi-geo-alt-fill fs-2 text-primary mb-3 d-block"></i>
+                            <h5 class="fw-bold">Global HQ</h5>
+                            <p class="text-secondary mb-0">123 Tech Avenue, Silicon Valley<br>California, CA 94025</p>
+                        </div>
+                        <div class="contact-method-card">
+                            <i class="bi bi-envelope-check-fill fs-2 text-primary mb-3 d-block"></i>
+                            <h5 class="fw-bold">Email Support</h5>
+                            <p class="text-secondary mb-0">hello@webstorehub.com<br>support@webstorehub.com</p>
+                        </div>
+                        <div class="contact-method-card">
+                            <i class="bi bi-clock-fill fs-2 text-primary mb-3 d-block"></i>
+                            <h5 class="fw-bold">Business Hours</h5>
+                            <p class="text-secondary mb-0">Mon - Fri: 9:00 AM - 6:00 PM<br>24/7 Priority for Partners</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="glass-form-card shadow-lg">
+                        <h3 class="fw-bold mb-4">Send us a Message</h3>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label small fw-bold">Full Name</label>
+                                    <input type="text" class="form-control p-3" placeholder="John Doe">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label small fw-bold">Email Address</label>
+                                    <input type="email" class="form-control p-3" placeholder="john@example.com">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label class="form-label small fw-bold">Subject</label>
+                                    <select class="form-select p-3">
+                                        <option selected>General Inquiry</option>
+                                        <option>Technical Support</option>
+                                        <option>Listing Submission</option>
+                                        <option>Partnership Clipping</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label class="form-label small fw-bold">Your Message</label>
+                                    <textarea class="form-control p-3" rows="5" placeholder="How can we help?"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn btn-primary w-100 py-3 rounded-pill fw-bold fs-5">Send Message <i class="bi bi-send-fill ms-2"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Infinite Orbit Support -->
+    <section class="py-5 bg-light-subtle">
+        <div class="container text-center py-5">
+            <h2 class="fw-bold mb-5">24/7 Omnichannel Support</h2>
+            <div class="orbit-container">
+                <div class="industry-3d-core"></div>
+                <div class="orbit-item" style="animation-delay: 0s;"><i class="bi bi-twitter-x"></i></div>
+                <div class="orbit-item" style="animation-delay: -3s;"><i class="bi bi-linkedin"></i></div>
+                <div class="orbit-item" style="animation-delay: -6s;"><i class="bi bi-discord"></i></div>
+                <div class="orbit-item" style="animation-delay: -9s;"><i class="bi bi-slack"></i></div>
+                <div class="orbit-item" style="animation-delay: -12s;"><i class="bi bi-telegram"></i></div>
+                <div class="text-center z-1 position-relative">
+                    <h1 class="fw-black mb-0 text-primary">Live</h1>
+                    <p class="fw-bold mb-0">Eco-System</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: The Partnership Mosaic -->
+    <section class="py-5 mb-5">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-0">Tailored Solutions for Everyone</h2>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <p class="text-secondary mb-0">Choose the channel that fits your specific needs for fastest response.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="mosaic-card h-100">
+                        <h5 class="fw-bold">General Team</h5>
+                        <p class="small text-secondary mb-0">Standard inquiries, feedback, and site navigation help.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="mosaic-card h-100" style="border-left-color: var(--brand-secondary);">
+                        <h5 class="fw-bold">Tech Experts</h5>
+                        <p class="small text-secondary mb-0">API integrations, technical bugs, and dashboard issues.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="mosaic-card h-100" style="border-left-color: #f59e0b;">
+                        <h5 class="fw-bold">Partnerships</h5>
+                        <p class="small text-secondary mb-0">Advertising, sponsorships, and strategic collaborations.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="mosaic-card h-100" style="border-left-color: var(--brand-accent);">
+                        <h5 class="fw-bold">Creators</h5>
+                        <p class="small text-secondary mb-0">Verification badges, submission reviews, and analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <a class="navbar-brand mb-3 d-inline-block" href="#">
+                        <i class="bi bi-grid-fill"></i> WebStore Hub
+                    </a>
+                    <p class="text-secondary small">Your ultimate destination to discover and explore the world's most popular websites and tools.</p>
+                    <div class="d-flex gap-3 fs-5 mt-3">
+                        <a href="#" class="text-secondary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Top Categories</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">AI Tools</a></li>
+                        <li><a href="#">Productivity</a></li>
+                        <li><a href="#">Design Tools</a></li>
+                        <li><a href="#">Developer Tools</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="text-secondary small mb-3">Subscribe to get new tools directly in your inbox.</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 border-color">
+            <p class="text-center text-secondary small mb-0">© 2026 WebStore Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

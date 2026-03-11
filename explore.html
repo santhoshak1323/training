@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Websites | WebStore Hub</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-grid-fill"></i>
+                WebStore Hub
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                            <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="explore.html">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link nav-link px-0" id="themeToggle">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-outline-primary px-4">Login</a>
+                    <a href="register.html" class="btn btn-primary px-4">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold">WebStore Hub</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle py-3 border-bottom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Home
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm bg-light">
+                        <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                        <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom active" href="explore.html">Explore</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <div class="d-grid gap-2">
+                <a href="login.html" class="btn btn-outline-primary">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+                <button class="btn btn-outline-secondary" id="offcanvasThemeToggle">
+                    <i class="bi bi-moon-stars-fill me-2"></i> Toggle Dark / Light Mode
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section style="
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+        padding: 70px 0 60px;
+        position: relative;
+        overflow: hidden;
+    ">
+        <!-- Subtle background glow blobs -->
+        <div style="position:absolute;width:400px;height:400px;background:var(--brand-primary);border-radius:50%;filter:blur(100px);opacity:0.15;top:-100px;right:-80px;pointer-events:none;"></div>
+        <div style="position:absolute;width:300px;height:300px;background:var(--brand-accent);border-radius:50%;filter:blur(100px);opacity:0.1;bottom:-80px;left:-60px;pointer-events:none;"></div>
+
+        <div class="container text-center" style="position:relative;z-index:2;">
+            <span class="badge rounded-pill px-3 py-2 mb-3 d-inline-block" style="background:rgba(37,99,235,0.2);color:#60a5fa;border:1px solid rgba(37,99,235,0.3);font-size:0.8rem;letter-spacing:1px;">DISCOVER</span>
+            <h1 class="fw-bold mb-3" style="color:white;font-size:clamp(1.8rem,4vw,3rem);">Explore Websites</h1>
+            <p style="color:rgba(255,255,255,0.6);max-width:520px;margin:0 auto;font-size:1rem;">Discover thousands of amazing websites and tools curated just for you.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        
+        <!-- Filters and Sorting -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4 mb-5">
+            <div class="d-flex gap-2 overflow-x-auto pb-2 pb-md-0 category-filters" style="scrollbar-width: none;">
+                <button class="btn btn-primary btn-sm rounded-pill px-3">All</button>
+                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color">AI Tools</button>
+                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color">Design</button>
+                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color">Developer</button>
+                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color">Productivity</button>
+                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color">Entertainment</button>
+            </div>
+            
+            <div class="d-flex align-items-center gap-2">
+                <span class="text-secondary small fw-medium text-nowrap">Sort By:</span>
+                <select class="form-select form-select-sm border-color rounded-pill px-3" style="width: 140px;">
+                    <option selected>Trending</option>
+                    <option>Newest</option>
+                    <option>Top Rated</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Grid Layout -->
+        <div class="row g-4">
+            <!-- Website Cards (Repeat 8 times for demo) -->
+            <div class="col-lg-3 col-md-4 col-sm-6 reveal">
+                <div class="website-card w-100" onclick="location.href='website-details.html'">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="ChatGPT">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category">AI Tool</div>
+                        <h5 class="card-title">ChatGPT</h5>
+                        <p class="card-description">Advanced AI language model for conversation and automation.</p>
+                        <div class="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <button class="btn btn-outline-primary w-100">Visit Website</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat -->
+            <div class="col-lg-3 col-md-4 col-sm-6 reveal">
+                <div class="website-card w-100" onclick="location.href='website-details.html'">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="Canva">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category">Design</div>
+                        <h5 class="card-title">Canva</h5>
+                        <p class="card-description">Create stunning graphics and designs with ease.</p>
+                        <div class="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <button class="btn btn-outline-primary w-100">Visit Website</button>
+                    </div>
+                </div>
+            </div>
+            <!-- ... more cards ... -->
+            <!-- Adding more cards for grid feel -->
+            <div class="col-lg-3 col-md-4 col-sm-6 reveal">
+                <div class="website-card w-100" onclick="location.href='website-details.html'">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="Notion">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category">Productivity</div>
+                        <h5 class="card-title">Notion</h5>
+                        <p class="card-description">All-in-one workspace for notes, tasks, and collaboration.</p>
+                        <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <button class="btn btn-outline-primary w-100">Visit Website</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 reveal">
+                <div class="website-card w-100" onclick="location.href='website-details.html'">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="GitHub">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category">Developer</div>
+                        <h5 class="card-title">GitHub</h5>
+                        <p class="card-description">Host and review code, manage projects, and build software.</p>
+                        <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <button class="btn btn-outline-primary w-100">Visit Website</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 2 -->
+             <div class="col-lg-3 col-md-4 col-sm-6 reveal">
+                <div class="website-card w-100" onclick="location.href='website-details.html'">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="Spotify">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category">Entertainment</div>
+                        <h5 class="card-title">Spotify</h5>
+                        <p class="card-description">Listen to the latest music and podcasts worldwide.</p>
+                        <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
+                        <button class="btn btn-outline-primary w-100">Visit Website</button>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-3 col-md-4 col-sm-6 reveal">
+                <div class="website-card w-100" onclick="location.href='website-details.html'">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="Figma">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category">Design</div>
+                        <h5 class="card-title">Figma</h5>
+                        <p class="card-description">The collaborative interface design tool for teams.</p>
+                        <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <button class="btn btn-outline-primary w-100">Visit Website</button>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-3 col-md-4 col-sm-6 reveal">
+                <div class="website-card w-100" onclick="location.href='website-details.html'">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="Midjourney">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category">AI Tool</div>
+                        <h5 class="card-title">Midjourney</h5>
+                        <p class="card-description">Create realistic AI art and illustrations via Discord.</p>
+                        <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <button class="btn btn-outline-primary w-100">Visit Website</button>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-3 col-md-4 col-sm-6 reveal">
+                <div class="website-card w-100" onclick="location.href='website-details.html'">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="Netflix">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category">Entertainment</div>
+                        <h5 class="card-title">Netflix</h5>
+                        <p class="card-description">Stream movies and TV shows anytime, anywhere.</p>
+                        <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <button class="btn btn-outline-primary w-100">Visit Website</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav class="mt-5 mb-5 overflow-hidden">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled"><a class="page-link border-color rounded-start-pill px-4" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link border-color rounded-end-pill px-4" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+        <!-- New Section 1: Editors' Choices -->
+        <section class="mb-5 reveal">
+            <div class="section-title-wrapper mb-4">
+                <h2 class="h3 fw-bold m-0 border-start border-primary border-4 ps-3">Editors' Picks 2026</h2>
+                <p class="text-secondary mt-1">Hand-selected for peak performance and innovation.</p>
+            </div>
+            <div class="explore-featured-row">
+                <div class="featured-wide-card">
+                    <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=1200&auto=format&fit=crop" class="featured-bg" alt="Creative Suite">
+                    <div class="featured-content">
+                        <span class="feat-badge">Must-Have</span>
+                        <h3>Adobe Creative Cloud</h3>
+                        <p>The industry standard for creative professionals.</p>
+                        <button class="btn btn-primary btn-sm rounded-pill px-4">Visit Now</button>
+                    </div>
+                </div>
+                <div class="featured-side-col">
+                    <div class="feat-mini-card">
+                        <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=500&auto=format&fit=crop" alt="Slack">
+                        <div class="mini-content">
+                            <h6>Slack Messenger</h6>
+                            <p>Team communication made simple.</p>
+                        </div>
+                    </div>
+                    <div class="feat-mini-card mt-3">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&auto=format&fit=crop" alt="Stripe">
+                        <div class="mini-content">
+                            <h6>Stripe Payments</h6>
+                            <p>Infrastructure for the internet economy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section 2: Coming Soon to Hub -->
+        <section class="mb-5 py-5 reveal">
+            <div class="row align-items-center bg-dark rounded-5 p-4 p-md-5 overflow-hidden position-relative">
+                <div class="col-lg-6 position-relative z-index-1">
+                    <span class="text-primary fw-bold text-uppercase ls-2">Future Tech</span>
+                    <h2 class="display-5 fw-bold text-white mt-2">Next Gen Tools Arriving Soon</h2>
+                    <p class="text-white-50 lead mb-4">Be the first to know about upcoming platforms and early access betas.</p>
+                    <div class="d-flex gap-3">
+                        <div class="upcoming-item">
+                            <div class="up-icon bg-primary bg-opacity-10"><i class="bi bi-cpu"></i></div>
+                            <span class="text-white small">Quantum Dev Kit</span>
+                        </div>
+                        <div class="upcoming-item">
+                            <div class="up-icon bg-info bg-opacity-10"><i class="bi bi-box"></i></div>
+                            <span class="text-white small">VR Editor Pro</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="upcoming-visual">
+                         <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800&auto=format&fit=crop" class="rounded-4 img-fluid" alt="Future">
+                    </div>
+                </div>
+                <div class="decor-circle"></div>
+            </div>
+        </section>
+
+        <!-- New Section 3: Community Spotlight -->
+        <section class="mb-5 reveal">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h4 m-0 fw-bold">Community Favorites</h2>
+                <a href="#" class="text-primary small fw-bold">Post a Website <i class="bi bi-plus-lg"></i></a>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="community-highlight-card">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&auto=format&fit=crop" alt="Dev Tools">
+                        <div class="comm-overlay">
+                            <h5>Essential VS Code Extensions</h5>
+                            <p>Curated by Sarah Dev</p>
+                            <div class="btn btn-sm btn-light rounded-pill">View List</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                     <div class="community-highlight-card">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&auto=format&fit=crop" alt="Team Work">
+                        <div class="comm-overlay">
+                            <h5>Top SaaS for Remote Teams</h5>
+                            <p>Curated by Mike CEO</p>
+                            <div class="btn btn-sm btn-light rounded-pill">View List</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <a class="navbar-brand mb-3 d-inline-block" href="#">
+                        <i class="bi bi-grid-fill"></i> WebStore Hub
+                    </a>
+                    <p class="text-secondary small">Your ultimate destination to discover and explore the world's most popular websites and tools.</p>
+                    <div class="d-flex gap-3 fs-5 mt-3">
+                        <a href="#" class="text-secondary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Top Categories</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">AI Tools</a></li>
+                        <li><a href="#">Productivity</a></li>
+                        <li><a href="#">Design Tools</a></li>
+                        <li><a href="#">Developer Tools</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="text-secondary small mb-3">Subscribe to get new tools directly in your inbox.</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 border-color">
+            <p class="text-center text-secondary small mb-0">© 2026 WebStore Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

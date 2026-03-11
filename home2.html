@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStore Hub | Next-Gen Marketplace</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .home2-hero {
+            padding: 120px 0;
+            background: linear-gradient(rgba(11, 18, 32, 0.7), rgba(11, 18, 32, 0.7)), 
+                        url('assets/images/home2_hero_bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-glass-composition {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .glass-float {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            animation: floatGlass 8s infinite ease-in-out;
+            transition: var(--transition);
+            max-width: 90%;
+        }
+
+        .glass-float:hover {
+            transform: scale(1.05) translateY(-10px);
+            border-color: var(--brand-primary);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 30px 60px rgba(37, 99, 235, 0.4);
+        }
+
+        .float-1 { top: 5%; left: 0; width: 200px; animation-delay: 0s; }
+        .float-2 { top: 40%; left: 30%; width: 260px; animation-delay: -2s; z-index: 2; }
+        .float-3 { bottom: 5%; right: 0; width: 180px; animation-delay: -4s; }
+
+        @keyframes floatGlass {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        .glass-tag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--brand-primary);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .glass-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .home2-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: white;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 991px) {
+            .home2-hero { padding: 80px 0; min-height: auto; text-align: center; background-attachment: scroll !important; }
+            .hero-content .d-flex { justify-content: center; }
+            .hero-glass-composition { height: 320px; margin-top: 50px; }
+            .float-1 { top: 0; left: 5%; width: 140px; }
+            .float-2 { top: 35%; left: 15%; width: 180px; }
+            .float-3 { bottom: 0; right: 5%; width: 130px; }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content .d-flex { flex-direction: column; width: 100%; max-width: 280px; margin: 0 auto; gap: 15px !important; }
+            .hero-content .btn { padding: 12px 20px !important; font-size: 0.85rem !important; }
+            .hero-glass-composition { height: 260px; overflow: hidden; }
+            .float-1 { width: 110px; top: -5px; left: 0; }
+            .float-2 { width: 150px; left: 15%; top: 30%; }
+            .float-3 { width: 100px; bottom: -5px; right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-grid-fill"></i>
+                WebStore Hub
+            </a>
+            
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Desktop Nav -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                            <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="explore.html">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link nav-link px-0" id="themeToggle">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-outline-primary px-4">Login</a>
+                    <a href="register.html" class="btn btn-primary px-4">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold">WebStore Hub</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle py-3 border-bottom active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Home
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm bg-light">
+                        <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                        <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="explore.html">Explore</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <div class="d-grid gap-2">
+                <a href="login.html" class="btn btn-outline-primary">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+                <button class="btn btn-outline-secondary" id="offcanvasThemeToggle">
+                    <i class="bi bi-moon-stars-fill me-2"></i> Toggle Dark / Light Mode
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 1: Unique Hero -->
+    <section class="home2-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary px-3 py-2 mb-4">v2.0 is here</span>
+                        <h1 class="home2-title">The Future of Tool Discovery is Here</h1>
+                        <p class="lead text-white-50 mb-5">WebStore Hub 2.0 brings you a more intuitive way to discover, manage, and visit the web's most powerful platforms.</p>
+                        <div class="d-flex gap-3">
+                            <a href="explore.html" class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold">Start Discovering</a>
+                            <button class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-bold">Watch Demo</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-glass-composition mt-5 mt-lg-0">
+                        <div class="glass-float float-1">
+                            <span class="glass-tag">Productivity</span>
+                            <div class="glass-title">Notion Template</div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="glass-float float-2">
+                            <span class="glass-tag">AI Design</span>
+                            <div class="glass-title">Midjourney Pro</div>
+                            <div class="d-flex gap-2">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                        </div>
+                        <div class="glass-float float-3">
+                            <span class="glass-tag">Developer</span>
+                            <div class="glass-title">API Hub</div>
+                            <i class="bi bi-cpu text-primary h3"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Platform Statistics -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4 reveal">
+                <div class="col-md-4">
+                    <div class="stat-card text-center">
+                        <h2 class="display-5 fw-bold text-primary">15k+</h2>
+                        <p class="text-secondary mb-0">Curated Tools</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card text-center">
+                        <h2 class="display-5 fw-bold text-success">2M+</h2>
+                        <p class="text-secondary mb-0">Monthly Visits</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card text-center">
+                        <h2 class="display-5 fw-bold text-info">99%</h2>
+                        <p class="text-secondary mb-0">User Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: AI Spotlight -->
+    <section class="spotlight-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 order-2 order-lg-1 reveal">
+                    <div class="spotlight-image-holder">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop" class="spotlight-img floating-ai-img" alt="AI Neural Network">
+                        <div class="ai-glow-orb"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 reveal">
+                    <h2 class="fw-bold mb-4">Master the AI Revolution</h2>
+                    <p class="text-secondary mb-4">We've hand-picked the best AI tools from across the web. From large language models to generative art platforms, find everything you need to supercharge your workflow.</p>
+                    <div class="glass-card mb-4">
+                        <div class="d-flex gap-3 align-items-center">
+                            <i class="bi bi-check-circle-fill text-success fs-4"></i>
+                            <div>
+                                <h6 class="fw-bold mb-1">Weekly Updates</h6>
+                                <p class="small text-secondary mb-0">Fresh tools added every Monday.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="categories.html" class="btn btn-primary px-5 py-3 rounded-pill fw-bold">Explore AI Category</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section 4: Trending Categories Grid -->
+    <section class="py-5 bg-dark-subtle">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <h2 class="fw-bold">Explore by Universe</h2>
+                <p class="text-secondary">Dive into curated ecosystems of performance and creativity.</p>
+            </div>
+            <div class="grid-exploration">
+                <div class="grid-item large reveal">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop" alt="Development">
+                    <div class="grid-content">
+                        <h3>Development</h3>
+                        <p>IDEs, Cloud Engines, APIs</p>
+                        <a href="categories.html" class="btn btn-sm btn-light">Explore</a>
+                    </div>
+                </div>
+                <div class="grid-item reveal">
+                    <img src="https://images.unsplash.com/photo-1547027072-332f09bd6bb3?w=800&auto=format&fit=crop" alt="Design">
+                    <div class="grid-content">
+                        <h3>Design</h3>
+                        <p>Assets & Vectors</p>
+                    </div>
+                </div>
+                <div class="grid-item reveal">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop" alt="Business">
+                    <div class="grid-content">
+                        <h3>Business</h3>
+                        <p>SaaS & CRM</p>
+                    </div>
+                </div>
+                <div class="grid-item reveal">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop" alt="Utilities">
+                    <div class="grid-content">
+                        <h3>Utilities</h3>
+                        <p>Extension Hub</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section 5: Global Impact Stats -->
+    <section class="py-5 overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 reveal">
+                    <h2 class="display-5 fw-bold mb-4">Powering the Next Generation of Creators</h2>
+                    <p class="lead text-secondary mb-5">WebStore Hub is more than a directory; it's the launchpad for your next big idea. Join over 2 million professionals today.</p>
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="p-4 rounded-4 border border-color bg-white-5 shadow-sm">
+                                <h3 class="fw-bold text-primary mb-1">150+</h3>
+                                <p class="small text-secondary mb-0">Countries Reach</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-4 rounded-4 border border-color bg-white-5 shadow-sm">
+                                <h3 class="fw-bold text-success mb-1">45k</h3>
+                                <p class="small text-secondary mb-0">Active Reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 position-relative reveal">
+                    <div class="impact-globe-visual">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop" class="img-fluid rounded-5 shadow-lg animate-pulse" alt="Global Network">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section 6: Next-Gen Dev Playground -->
+    <section class="py-5">
+        <div class="container">
+            <div class="glass-showcase p-5 rounded-5 border border-color text-center reveal">
+                <span class="badge bg-primary mb-3">Developer Preview</span>
+                <h2 class="fw-bold mb-3">Built for Efficiency</h2>
+                <p class="text-secondary mb-5 mx-auto" style="max-width: 600px;">Integrated API access for high-volume tool auditing and collection management. Ready for your custom local instance.</p>
+                <div class="code-preview text-start p-4 rounded-4 bg-dark mb-4 mx-auto" style="max-width: 500px; border: 1px solid rgba(255,255,255,0.1);">
+                    <code class="text-info">curl -X GET "https://api.webstorehub.com/v2/tools" \<br>
+                    &nbsp;&nbsp;-H "Authorization: Bearer YOUR_TOKEN" \<br>
+                    &nbsp;&nbsp;-d category="ai"</code>
+                </div>
+                <a href="#" class="btn btn-outline-primary px-4 py-2 rounded-pill">Read Docs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Benefits Grid (Existing) -->
+    <section class="py-5 bg-light-subtle">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <h2 class="fw-bold">Why WebStore Hub?</h2>
+                <p class="text-secondary">Elevate your productivity with our core features.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 reveal">
+                    <div class="glass-card h-100">
+                        <i class="bi bi-shield-check text-primary fs-1 mb-3 d-block"></i>
+                        <h4 class="fw-bold">Verified Links</h4>
+                        <p class="text-secondary">Every website is manually checked for safety and performance before being listed.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="glass-card h-100">
+                        <i class="bi bi-star text-warning fs-1 mb-3 d-block"></i>
+                        <h4 class="fw-bold">User Ratings</h4>
+                        <p class="text-secondary">Real reviews from professionals who use these tools daily.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="glass-card h-100">
+                        <i class="bi bi-cloud-arrow-down text-info fs-1 mb-3 d-block"></i>
+                        <h4 class="fw-bold">One-Click Save</h4>
+                        <p class="text-secondary">Save your favorite tools to your dashboard and access them from any device.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <a class="navbar-brand mb-3 d-inline-block" href="#">
+                        <i class="bi bi-grid-fill"></i> WebStore Hub
+                    </a>
+                    <p class="text-secondary small">Your ultimate destination to discover and explore the world's most popular websites and tools.</p>
+                    <div class="d-flex gap-3 fs-5 mt-3">
+                        <a href="#" class="text-secondary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Top Categories</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">AI Tools</a></li>
+                        <li><a href="#">Productivity</a></li>
+                        <li><a href="#">Design Tools</a></li>
+                        <li><a href="#">Developer Tools</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="text-secondary small mb-3">Subscribe to get new tools directly in your inbox.</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 border-color">
+            <p class="text-center text-secondary small mb-0">© 2026 WebStore Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
