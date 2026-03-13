@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | WebStore Hub</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Unique Service Details Styles */
+        .service-details-hero {
+            padding: 180px 0 120px;
+            background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+            color: white;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            overflow: hidden;
+        }
+
+        .service-details-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&auto=format&fit=crop') center/cover;
+            opacity: 0.15;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-floating-element {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 60%);
+            border-radius: 50%;
+            top: -50px;
+            right: 10%;
+            animation: pulseElement 8s infinite alternate ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes pulseElement {
+            0% { transform: scale(1) translate(0,0); opacity: 0.2; }
+            100% { transform: scale(1.5) translate(-50px, 50px); opacity: 0.5; }
+        }
+
+        .details-wrapper {
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 45px;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .feature-list li i {
+            position: absolute;
+            left: 0;
+            top: -5px;
+            font-size: 1.5rem;
+            color: var(--brand-secondary);
+            background: rgba(16, 185, 129, 0.1);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        .pricing-card {
+            background: linear-gradient(to bottom right, var(--card-bg), var(--bg-color));
+            border: 2px solid var(--brand-primary);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(37, 99, 235, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audience-fit-card {
+            min-height: 225px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .pricing-card::after {
+            content: 'POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--brand-primary);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .price {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            line-height: 1;
+        }
+
+        .price span {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 8px;
+            margin-left: 5px;
+        }
+
+        /* Animated Progress Steps */
+        .process-steps {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 10px;
+            bottom: 20px;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .step-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .step-item::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 4px solid var(--brand-primary);
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .step-item:hover::before {
+            transform: scale(1.5);
+            box-shadow: 0 0 15px var(--brand-primary);
+        }
+
+        /* Specific Accordion Styles */
+        .accordion-button {
+            font-weight: 600;
+            color: var(--text-primary);
+            background-color: transparent !important;
+            box-shadow: none !important;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .accordion-item {
+            border: 1px solid var(--border-color);
+            border-radius: 15px !important;
+            margin-bottom: 15px;
+            background: var(--card-bg);
+            overflow: hidden;
+            transition: border-color 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .accordion-item:hover {
+            border-color: var(--brand-primary);
+        }
+
+        .accordion-item + .accordion-item {
+            margin-top: 18px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-xl fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-grid-fill"></i>
+                WebStore Hub
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="explore.html">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="service.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link nav-link px-0" id="themeToggle">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-outline-primary px-4">Login</a>
+                    <a href="register.html" class="btn btn-primary px-4">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold">WebStore Hub</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-4">
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="explore.html">Explore</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom active" href="service.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Service Details Hero Section -->
+    <section class="service-details-hero">
+        <div class="hero-floating-element"></div>
+        <div class="container position-relative z-2">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="service.html" class="text-white-50 text-decoration-none">Services</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Premium Listing</li>
+                </ol>
+            </nav>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Premium Directory Listing</h1>
+                    <p class="fs-5 text-white-50 mb-0">Skyrocket your platform's visibility by securing a prime spot on WebStore Hub's homepage and major sub-categories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Content -->
+    <main class="container details-wrapper mb-5">
+        <div class="row g-5">
+            <!-- Left Column: Content -->
+            <div class="col-lg-8">
+                <!-- Overview Card -->
+                <div class="content-card">
+                    <h3 class="fw-bold border-bottom border-color pb-3 mb-4">What's Included?</h3>
+                    <p class="text-secondary mb-5">Stand out from the crowd of over 15,000+ tools. Our Premium Listing ensures that when professionals are searching for solutions in your domain, your site is the first one they see.</p>
+                    
+                    <ul class="feature-list">
+                        <li>
+                            <i class="bi bi-rocket-fill"></i>
+                            <strong>Homepage Feature:</strong> 30 days placement in the "Top Rated" scrolling carousel.
+                        </li>
+                        <li>
+                            <i class="bi bi-search"></i>
+                            <strong>Category Dominance:</strong> Pinned to the top 3 spots of your primary category page.
+                        </li>
+                        <li>
+                            <i class="bi bi-shield-check"></i>
+                            <strong>Verified Badge:</strong> Instant aesthetic upgrade indicating a trusted source.
+                        </li>
+                        <li>
+                            <i class="bi bi-graph-up-arrow"></i>
+                            <strong>Analytics Dashboard:</strong> Private link tracking and impression statistics.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Process Section -->
+                <div class="content-card reveal">
+                    <h3 class="fw-bold border-bottom border-color pb-3 mb-4">How It Works</h3>
+                    <div class="process-steps mt-4">
+                        <div class="step-item">
+                            <h5 class="fw-bold">1. Submit Application</h5>
+                            <p class="text-secondary small">Provide your website URL and marketing assets. Our team reviews standard compliance.</p>
+                        </div>
+                        <div class="step-item">
+                            <h5 class="fw-bold">2. Quick Audit</h5>
+                            <p class="text-secondary small">We verify your platform ensures safety and a high-quality user experience.</p>
+                        </div>
+                        <div class="step-item">
+                            <h5 class="fw-bold">3. Go Live</h5>
+                            <p class="text-secondary small">Within 24 hours, your enhanced profile is published to our audience of 2M+ monthly users.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="content-card reveal">
+                    <h3 class="fw-bold border-bottom border-color pb-3 mb-4">Frequently Asked Questions</h3>
+                    <div class="accordion" id="serviceFAQ">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Do I need an existing basic listing first?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#serviceFAQ">
+                                <div class="accordion-body text-secondary">
+                                    No, you do not. A Premium Listing covers the standard setup. You can submit a brand new platform alongside purchasing the premium package today.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Can I change my marketing assets after going live?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#serviceFAQ">
+                                <div class="accordion-body text-secondary">
+                                    Yes! You'll receive dashboard access where you can modify your banners, description, and link once per week.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Sticky Pricing/CTA -->
+            <div class="col-lg-4">
+                <div class="sticky-sidebar">
+                    <div class="pricing-card">
+                        <h4 class="fw-bold mb-3">Premium Boost</h4>
+                        <p class="text-secondary small">Perfect for SaaS startups looking for immediate user acquisition.</p>
+                        
+                        <div class="price">
+                            $99<span>/mo</span>
+                        </div>
+                        
+                        <hr class="border-color my-4">
+                        
+                        <ul class="text-start list-unstyled text-secondary small mb-4">
+                            <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Guaranteed Homepage spot</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Custom SEO Backlink</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Performance Analytics</li>
+                            <li><i class="bi bi-check2 text-success me-2"></i> Dedicated Support Rep</li>
+                        </ul>
+                        
+                        <button class="btn btn-primary w-100 py-3 rounded-pill fw-bold text-uppercase tracking-wide shadow-sm" style="letter-spacing: 1px;">
+                            Start Campaign
+                        </button>
+                        <p class="text-secondary text-center small mt-3 mb-0"><i class="bi bi-lock-fill"></i> Secure SSL Checkout</p>
+                    </div>
+
+                    <!-- Contact Help Box -->
+                    <div class="bg-light-subtle rounded-4 p-4 mt-4 border border-color text-center">
+                        <i class="bi bi-headset fs-2 text-primary mb-2"></i>
+                        <h5 class="fw-bold">Need Custom Plans?</h5>
+                        <p class="small text-secondary mb-3">Looking for API access or Enterprise wide marketing pushes?</p>
+                        <a href="contact.html" class="btn btn-outline-secondary btn-sm rounded-pill px-4">Contact Sales</a>
+                    </div>
+
+                    <div class="bg-light-subtle rounded-4 p-4 mt-4 border border-color audience-fit-card">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 52px; height: 52px;">
+                                <i class="bi bi-lightning-charge-fill fs-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Launch Snapshot</h5>
+                                <p class="small text-secondary mb-0">What happens in your first 7 days</p>
+                            </div>
+                        </div>
+                        <div class="small text-secondary d-flex flex-column gap-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>Creative review</span>
+                                <strong class="text-dark-emphasis">Day 1</strong>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>Homepage boost</span>
+                                <strong class="text-dark-emphasis">Day 2</strong>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>Performance report</span>
+                                <strong class="text-dark-emphasis">Day 7</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-light-subtle rounded-4 p-4 mt-4 border border-color">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="bg-success bg-opacity-10 text-success rounded-circle d-flex align-items-center justify-content-center" style="width: 52px; height: 52px;">
+                                <i class="bi bi-megaphone-fill fs-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Audience Fit</h5>
+                                <p class="small text-secondary mb-0">Built for launch-ready brands</p>
+                            </div>
+                        </div>
+                        <p class="small text-secondary mb-0">
+                            Best results come from products with a clear value proposition, polished landing page, and a team ready to respond quickly to new traffic.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <a class="navbar-brand mb-3 d-inline-block" href="index.html">
+                        <i class="bi bi-grid-fill"></i> WebStore Hub
+                    </a>
+                    <p class="text-secondary small">Your ultimate destination to discover and explore the world's most popular websites and tools.</p>
+                    <div class="d-flex gap-3 fs-5 mt-3">
+                        <a href="#" class="text-secondary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Top Categories</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">AI Tools</a></li>
+                        <li><a href="#">Productivity</a></li>
+                        <li><a href="#">Design Tools</a></li>
+                        <li><a href="#">Developer Tools</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="text-secondary small mb-3">Subscribe to get new tools directly in your inbox.</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 border-color">
+            <p class="text-center text-secondary small mb-0">© 2026 WebStore Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="bi bi-chevron-up"></i>
+    </a>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
