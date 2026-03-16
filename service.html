@@ -201,6 +201,256 @@
             transform: translateX(5px);
         }
 
+        .catalog-services-section {
+            padding: 48px 0 80px;
+            background: linear-gradient(180deg, rgba(37, 99, 235, 0.04) 0%, transparent 18%, transparent 100%);
+            position: relative;
+        }
+
+        .catalog-services-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.08), transparent 32%);
+            pointer-events: none;
+        }
+
+        .service-group {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 72px;
+        }
+
+        .service-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-group-header {
+            margin-bottom: 32px;
+        }
+
+        .service-group-panel {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 32px;
+            padding: 32px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
+        }
+
+        [data-bs-theme="dark"] .service-group-panel {
+            background: rgba(17, 24, 39, 0.65);
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .service-group-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            background: rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(37, 99, 235, 0.14);
+            margin-bottom: 18px;
+        }
+
+        .service-app-card {
+            --app-accent: var(--brand-primary);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 0 0 18px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+        }
+
+        .service-app-card::before {
+            content: '';
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 170px;
+            background:
+                linear-gradient(180deg, rgba(15, 23, 42, 0.02) 0%, rgba(15, 23, 42, 0.75) 100%),
+                var(--app-image);
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+            transition: transform 0.45s ease;
+            pointer-events: none;
+        }
+
+        .service-app-card::after {
+            content: '';
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--app-accent), transparent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-app-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(37, 99, 235, 0.28);
+            box-shadow: 0 24px 45px rgba(15, 23, 42, 0.12);
+        }
+
+        [data-bs-theme="dark"] .service-app-card:hover {
+            box-shadow: 0 24px 45px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-app-card:hover::before {
+            transform: scale(1.03);
+        }
+
+        .service-app-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .service-app-top {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 112px 18px 0;
+        }
+
+        .service-app-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.45rem;
+            color: white;
+            background: linear-gradient(135deg, var(--app-accent), rgba(255, 255, 255, 0.45));
+            box-shadow: 0 16px 35px rgba(37, 99, 235, 0.18);
+            transition: transform 0.45s ease;
+        }
+
+        .service-app-card:hover .service-app-icon {
+            transform: scale(1.08) rotate(-4deg);
+        }
+
+        .service-app-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--app-accent);
+            background: rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(37, 99, 235, 0.14);
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.92);
+        }
+
+        [data-bs-theme="dark"] .service-app-tag {
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .service-app-title {
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            padding: 0 18px;
+        }
+
+        .service-app-desc {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            line-height: 1.55;
+            font-size: 0.92rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            padding: 0 18px;
+        }
+
+        .service-app-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.83rem;
+            padding: 0 18px;
+        }
+
+        .service-app-meta i {
+            color: var(--app-accent);
+        }
+
+        .service-app-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        .service-app-rating i {
+            color: #f59e0b;
+        }
+
+        .service-app-actions {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 0 18px;
+        }
+
+        .service-app-actions .service-btn {
+            width: fit-content;
+            padding: 9px 16px;
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 991px) {
+            .catalog-services-section {
+                padding: 36px 0 60px;
+            }
+
+            .service-group-panel {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .service-group {
+                margin-bottom: 52px;
+            }
+
+            .service-group-panel {
+                padding: 20px;
+                border-radius: 24px;
+            }
+
+            .service-app-card {
+                padding-bottom: 20px;
+            }
+        }
+
         /* Value Prop Section */
         .value-prop-section {
             padding: 100px 0;
@@ -367,7 +617,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            <li><a class="dropdown-item" href="index.html">Classic Directory</a></li>
+                            <li><a class="dropdown-item" href="home2.html">Modern Marketplace</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="explore.html">Explore</a></li>
                     <li class="nav-item"><a class="nav-link active" href="service.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
@@ -378,8 +636,7 @@
                     <button class="btn btn-link nav-link px-0" id="themeToggle">
                         <i class="bi bi-moon-stars-fill"></i>
                     </button>
-                    <a href="login.html" class="btn btn-outline-primary px-4">Login</a>
-                    <a href="register.html" class="btn btn-primary px-4">Register</a>
+                    <a href="auth.html" class="btn btn-primary px-4 rounded-pill fw-bold">Get Started</a>
                 </div>
             </div>
         </div>
@@ -393,7 +650,15 @@
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-4">
-                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle py-3 border-bottom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Home
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm bg-light">
+                        <li><a class="dropdown-item" href="index.html">Classic Directory</a></li>
+                        <li><a class="dropdown-item" href="home2.html">Modern Marketplace</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item"><a class="nav-link py-3 border-bottom" href="explore.html">Explore</a></li>
                 <li class="nav-item"><a class="nav-link py-3 border-bottom active" href="service.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link py-3 border-bottom" href="categories.html">Categories</a></li>
@@ -401,8 +666,7 @@
                 <li class="nav-item"><a class="nav-link py-3 border-bottom" href="dashboard.html">Dashboard</a></li>
             </ul>
             <div class="d-grid gap-2">
-                <a href="login.html" class="btn btn-outline-primary">Login</a>
-                <a href="register.html" class="btn btn-primary">Register</a>
+                <a href="auth.html" class="btn btn-primary rounded-pill fw-bold py-3">Get Started</a>
                 <button class="btn btn-outline-secondary" id="offcanvasThemeToggle">
                     <i class="bi bi-moon-stars-fill me-2"></i> Toggle Dark Mode
                 </button>
@@ -410,193 +674,316 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="service-hero">
-        <div class="hero-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-        </div>
-        <div class="container service-hero-content text-center reveal">
-            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-3 fw-bold tracking-wide">OUR SERVICES</span>
-            <h1 class="display-3 fw-bold mb-4">Elevate Your Web Presence</h1>
-            <p class="lead text-secondary mx-auto mb-5" style="max-width: 700px;">
-                From premium directory listings to custom API integrations, discover the elite services we offer to scale your digital product.
-            </p>
-        </div>
-    </section>
-
-    <!-- Services Grid -->
-    <section class="py-5 mt-n5 position-relative" style="z-index: 10;">
-        <div class="container">
-            <div class="row g-4">
-                
-                <!-- Service 1 -->
-                <div class="col-lg-4 col-md-6 reveal">
-                    <div class="service-card-wrapper h-100">
-                        <div class="advanced-service-card">
-                            <div class="service-icon-box">
-                                <i class="bi bi-rocket-takeoff"></i>
-                            </div>
-                            <h3 class="service-title">Premium Listing</h3>
-                            <p class="service-desc">Get your website or tool featured on our homepage and top category pages to drive massive traffic.</p>
-                            <a href="service-details.html" class="service-btn">
-                                Explore Service <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="col-lg-4 col-md-6 reveal" style="animation-delay: 0.2s;">
-                    <div class="service-card-wrapper h-100">
-                        <div class="advanced-service-card">
-                            <div class="service-icon-box" style="color: var(--brand-secondary); background: rgba(16, 185, 129, 0.1);">
-                                <i class="bi bi-code-slash"></i>
-                            </div>
-                            <h3 class="service-title">API Integration</h3>
-                            <p class="service-desc">Access our curated database via REST API. Perfect for developers building their own directories.</p>
-                            <a href="service-details.html" class="service-btn">
-                                Explore Service <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="col-lg-4 col-md-6 reveal" style="animation-delay: 0.4s;">
-                    <div class="service-card-wrapper h-100">
-                        <div class="advanced-service-card">
-                            <div class="service-icon-box" style="color: var(--brand-accent); background: rgba(124, 58, 237, 0.1);">
-                                <i class="bi bi-brush"></i>
-                            </div>
-                            <h3 class="service-title">Design Audit</h3>
-                            <p class="service-desc">Our expert review team will analyze your website's UI/UX and provide actionable insights for improvement.</p>
-                            <a href="service-details.html" class="service-btn">
-                                Explore Service <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="col-lg-4 col-md-6 reveal">
-                    <div class="service-card-wrapper h-100">
-                        <div class="advanced-service-card">
-                            <div class="service-icon-box text-warning" style="background: rgba(245, 158, 11, 0.1);">
-                                <i class="bi bi-bar-chart"></i>
-                            </div>
-                            <h3 class="service-title">SEO Boost</h3>
-                            <p class="service-desc">Enhance your visibility in our internal search engine and get verified backlinks to boost your domain authority.</p>
-                            <a href="service-details.html" class="service-btn">
-                                Explore Service <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="col-lg-4 col-md-6 reveal" style="animation-delay: 0.2s;">
-                    <div class="service-card-wrapper h-100">
-                        <div class="advanced-service-card">
-                            <div class="service-icon-box text-danger" style="background: rgba(239, 68, 68, 0.1);">
-                                <i class="bi bi-megaphone"></i>
-                            </div>
-                            <h3 class="service-title">Newsletter Feature</h3>
-                            <p class="service-desc">Reach our 50,000+ active subscribers directly in their inbox with a dedicated section for your tool.</p>
-                            <a href="service-details.html" class="service-btn">
-                                Explore Service <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="col-lg-4 col-md-6 reveal" style="animation-delay: 0.4s;">
-                    <div class="service-card-wrapper h-100">
-                        <div class="advanced-service-card">
-                            <div class="service-icon-box text-info" style="background: rgba(6, 182, 212, 0.1);">
-                                <i class="bi bi-shield-check"></i>
-                            </div>
-                            <h3 class="service-title">Verified Trust Badge</h3>
-                            <p class="service-desc">Gain a verified badge after passing our strict security and quality checks, increasing user trust instantly.</p>
-                            <a href="service-details.html" class="service-btn">
-                                Explore Service <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+    <!-- Categorized App Services -->
+    <section class="catalog-services-section">
+        <div class="container position-relative">
+            <div class="text-center mb-5 reveal">
+                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-3 fw-bold">APP COLLECTIONS</span>
+                <h2 class="display-5 fw-bold mb-3">Featured App Collections</h2>
+                <p class="lead text-secondary mx-auto mb-0" style="max-width: 760px;">
+                    Browse cleaner, image-first shelves across popular app categories.
+                </p>
             </div>
-        </div>
-    </section>
 
-    <!-- Social Media Services Section -->
-    <section class="social-media-section">
-        <div class="social-circle-bg"></div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0 z-2 position-relative">
-                    <span class="badge bg-danger bg-opacity-10 text-danger px-3 py-2 rounded-pill mb-3 fw-bold">SOCIAL MEDIA</span>
-                    <h2 class="display-5 fw-bold mb-4">Master Your Social Presence</h2>
-                    <p class="lead text-secondary mb-4">Build an engaged community and grow your brand organically with our comprehensive social media management services.</p>
-                    <ul class="list-unstyled mb-5">
-                        <li class="d-flex align-items-center gap-3 mb-3">
-                            <i class="bi bi-check-circle-fill text-danger fs-5"></i>
-                            <span class="fw-medium">Platform-specific content strategies</span>
-                        </li>
-                        <li class="d-flex align-items-center gap-3 mb-3">
-                            <i class="bi bi-check-circle-fill text-danger fs-5"></i>
-                            <span class="fw-medium">Engagement & community growth</span>
-                        </li>
-                        <li class="d-flex align-items-center gap-3">
-                            <i class="bi bi-check-circle-fill text-danger fs-5"></i>
-                            <span class="fw-medium">Detailed analytics reporting</span>
-                        </li>
-                    </ul>
-                    <a href="contact.html" class="service-btn" style="background: var(--card-bg); border-color: var(--border-color);">
-                        Talk to an Expert <i class="bi bi-arrow-right"></i>
-                    </a>
+            <div class="service-group reveal">
+                <div class="service-group-panel">
+                    <div class="service-group-header">
+                        <span class="service-group-kicker"><i class="bi bi-mortarboard-fill"></i> Educational Apps</span>
+                        <h3 class="h2 fw-bold mb-2">Learn and level up</h3>
+                        <p class="text-secondary mb-0">Top picks for study, practice, and guided learning.</p>
+                    </div>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-12 col-md-6 col-xl-3 reveal">
+                            <article class="service-app-card" style="--app-accent: #2563EB; --app-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-journal-richtext"></i></div>
+                                    <span class="service-app-tag">Learning</span>
+                                </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">StudyFlow</h4>
+                                    <p class="service-app-desc">Smart lesson boards, quizzes, and revision tracks.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-layers-fill"></i><span>Educational App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3 reveal" style="animation-delay: 0.1s;">
+                            <article class="service-app-card" style="--app-accent: #10B981; --app-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-translate"></i></div>
+                                    <span class="service-app-tag">Language</span>
+                                </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">Lingua Spark</h4>
+                                    <p class="service-app-desc">Daily speaking drills and bite-sized vocabulary sets.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-book-half"></i><span>Educational App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3 reveal" style="animation-delay: 0.2s;">
+                            <article class="service-app-card" style="--app-accent: #7C3AED; --app-image: url('https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-calculator-fill"></i></div>
+                                    <span class="service-app-tag">STEM</span>
+                                </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">Formula Forge</h4>
+                                    <p class="service-app-desc">Interactive math and science practice with live steps.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-graph-up-arrow"></i><span>Educational App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3 reveal" style="animation-delay: 0.3s;">
+                            <article class="service-app-card" style="--app-accent: #F59E0B; --app-image: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-easel2-fill"></i></div>
+                                    <span class="service-app-tag">Creative</span>
+                                </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">SkillCanvas</h4>
+                                    <p class="service-app-desc">Design and creator workshops with quick milestones.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-lightbulb-fill"></i><span>Educational App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="social-mock-container">
-                        <div class="social-card-mock social-card-1">
-                            <div class="mock-user">
-                                <div class="mock-avatar" style="background: url('https://ui-avatars.com/api/?name=W+H&background=ec4899&color=fff') center/cover;"></div>
-                                <div style="flex-grow: 1;">
-                                    <div class="mock-line mb-2" style="width: 60%;"></div>
-                                    <div class="mock-line" style="width: 40%; opacity: 0.5;"></div>
+            </div>
+
+            <div class="service-group reveal">
+                <div class="service-group-panel">
+                    <div class="service-group-header">
+                        <span class="service-group-kicker"><i class="bi bi-globe2"></i> Informational Apps</span>
+                        <h3 class="h2 fw-bold mb-2">Stay in the know</h3>
+                        <p class="text-secondary mb-0">Fast access to news, maps, analytics, and research.</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 col-xl-3 reveal">
+                            <article class="service-app-card" style="--app-accent: #06B6D4; --app-image: url('https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-newspaper"></i></div>
+                                    <span class="service-app-tag">News</span>
                                 </div>
-                            </div>
-                            <div class="mock-img" style="background: url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=300&q=80') center/cover;"></div>
-                            <div class="d-flex justify-content-between text-muted mt-2">
-                                <i class="bi bi-heart-fill text-danger"></i>
-                                <i class="bi bi-chat"></i>
-                                <i class="bi bi-share"></i>
-                            </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">BriefWire</h4>
+                                    <p class="service-app-desc">Daily headlines arranged into clean topic feeds.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-broadcast-pin"></i><span>Informational App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
                         </div>
-                        <div class="social-card-mock social-card-2">
-                            <div class="mock-user">
-                                <div class="mock-avatar" style="background: url('https://ui-avatars.com/api/?name=S+M&background=3b82f6&color=fff') center/cover;"></div>
-                                <div style="flex-grow: 1;">
-                                    <div class="mock-line mb-2" style="width: 80%;"></div>
+                        <div class="col-12 col-md-6 col-xl-3 reveal" style="animation-delay: 0.1s;">
+                            <article class="service-app-card" style="--app-accent: #EF4444; --app-image: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-map-fill"></i></div>
+                                    <span class="service-app-tag">Geo Data</span>
                                 </div>
-                            </div>
-                            <div class="mock-line" style="width: 100%;"></div>
-                            <div class="mock-line" style="width: 90%;"></div>
-                            <div class="mock-line" style="width: 70%;"></div>
-                            <div class="d-flex justify-content-between text-muted mt-2">
-                                <span class="small fw-bold text-primary">View Insights</span>
-                            </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">Atlas Scope</h4>
+                                    <p class="service-app-desc">Live maps for places, weather, and local updates.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-compass-fill"></i><span>Informational App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
                         </div>
-                        <div class="social-card-mock social-card-3">
-                            <div class="mock-user">
-                                <div class="mock-avatar" style="background: url('https://ui-avatars.com/api/?name=A+G&background=10b981&color=fff') center/cover;"></div>
-                                <div style="flex-grow: 1;">
-                                    <div class="mock-line mb-2" style="width: 50%;"></div>
-                                    <div class="mock-line" style="width: 30%; opacity: 0.5;"></div>
+                        <div class="col-12 col-md-6 col-xl-3 reveal" style="animation-delay: 0.2s;">
+                            <article class="service-app-card" style="--app-accent: #0EA5E9; --app-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-bar-chart-line-fill"></i></div>
+                                    <span class="service-app-tag">Analytics</span>
                                 </div>
-                            </div>
-                            <div class="mock-img" style="background: url('https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=300&q=80') center/cover; height: 80px;"></div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">Insight Deck</h4>
+                                    <p class="service-app-desc">Performance dashboards with sharp, readable charts.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-speedometer2"></i><span>Informational App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3 reveal" style="animation-delay: 0.3s;">
+                            <article class="service-app-card" style="--app-accent: #8B5CF6; --app-image: url('https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-search-heart-fill"></i></div>
+                                    <span class="service-app-tag">Research</span>
+                                </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">FactBase</h4>
+                                    <p class="service-app-desc">A searchable library for reports and explainers.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-collection-fill"></i><span>Informational App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-group reveal">
+                <div class="service-group-panel">
+                    <div class="service-group-header">
+                        <span class="service-group-kicker"><i class="bi bi-controller"></i> Entertainment Apps</span>
+                        <h3 class="h2 fw-bold mb-2">Play, watch, enjoy</h3>
+                        <p class="text-secondary mb-0">Popular entertainment apps with a more visual browse experience.</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 col-xl-3 reveal">
+                            <article class="service-app-card" style="--app-accent: #EC4899; --app-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-play-circle-fill"></i></div>
+                                    <span class="service-app-tag">Streaming</span>
+                                </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">StreamNest</h4>
+                                    <p class="service-app-desc">Movies, shows, and curated playlists in one app.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-film"></i><span>Entertainment App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3 reveal" style="animation-delay: 0.1s;">
+                            <article class="service-app-card" style="--app-accent: #F97316; --app-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-joystick"></i></div>
+                                    <span class="service-app-tag">Gaming</span>
+                                </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">Arcade Nova</h4>
+                                    <p class="service-app-desc">Quick matches, tournaments, and daily game drops.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-trophy-fill"></i><span>Entertainment App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3 reveal" style="animation-delay: 0.2s;">
+                            <article class="service-app-card" style="--app-accent: #14B8A6; --app-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-music-note-beamed"></i></div>
+                                    <span class="service-app-tag">Audio</span>
+                                </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">Pulse FM</h4>
+                                    <p class="service-app-desc">Mood channels, live sessions, and fresh playlists.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-headphones"></i><span>Entertainment App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3 reveal" style="animation-delay: 0.3s;">
+                            <article class="service-app-card" style="--app-accent: #6366F1; --app-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-people-fill"></i></div>
+                                    <span class="service-app-tag">Community</span>
+                                </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">FanSphere</h4>
+                                    <p class="service-app-desc">Live rooms and community spaces for shared interests.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-chat-heart-fill"></i><span>Entertainment App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-group reveal">
+                <div class="service-group-panel">
+                    <div class="service-group-header">
+                        <span class="service-group-kicker"><i class="bi bi-briefcase-fill"></i> Productivity Apps</span>
+                        <h3 class="h2 fw-bold mb-2">Get more done</h3>
+                        <p class="text-secondary mb-0">A small, balanced shelf for planning and focus tools.</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 col-xl-3 reveal">
+                            <article class="service-app-card" style="--app-accent: #2563EB; --app-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-kanban-fill"></i></div>
+                                    <span class="service-app-tag">Planning</span>
+                                </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">SprintStack</h4>
+                                    <p class="service-app-desc">Clean boards, timelines, and team task tracking.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-check2-square"></i><span>Productivity App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3 reveal" style="animation-delay: 0.1s;">
+                            <article class="service-app-card" style="--app-accent: #10B981; --app-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-clock-history"></i></div>
+                                    <span class="service-app-tag">Focus</span>
+                                </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">FocusLoop</h4>
+                                    <p class="service-app-desc">Time blocks, reminders, and focus-friendly sessions.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-lightning-charge-fill"></i><span>Productivity App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3 reveal" style="animation-delay: 0.2s;">
+                            <article class="service-app-card" style="--app-accent: #7C3AED; --app-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-people"></i></div>
+                                    <span class="service-app-tag">Collaboration</span>
+                                </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">TeamSync</h4>
+                                    <p class="service-app-desc">Shared tasks, quick updates, and lightweight team planning.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-chat-dots"></i><span>Productivity App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3 reveal" style="animation-delay: 0.3s;">
+                            <article class="service-app-card" style="--app-accent: #F59E0B; --app-image: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80');">
+                                <div class="service-app-top">
+                                    <div class="service-app-icon"><i class="bi bi-calendar-check"></i></div>
+                                    <span class="service-app-tag">Scheduling</span>
+                                </div>
+                                <div>
+                                    <h4 class="service-app-title fw-bold">PlanPilot</h4>
+                                    <p class="service-app-desc">Smart scheduling, reminders, and calendar-friendly planning.</p>
+                                </div>
+                                <div class="service-app-meta"><i class="bi bi-kanban"></i><span>Productivity App</span></div>
+                                <div class="service-app-actions">
+                                    <a href="service-details.html" class="service-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </article>
                         </div>
                     </div>
                 </div>

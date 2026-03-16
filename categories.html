@@ -36,6 +36,32 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        .category-card h3 {
+            line-height: 1.25;
+            min-height: 2.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 991px) and (min-width: 768px) {
+            .category-card {
+                padding: 28px 16px;
+            }
+
+            .category-icon {
+                font-size: 2.2rem;
+                margin-bottom: 16px;
+            }
+
+            .category-card h3 {
+                font-size: 1rem;
+                min-height: 2.7em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -75,8 +101,7 @@
                     <button class="btn btn-link nav-link px-0" id="themeToggle">
                         <i class="bi bi-moon-stars-fill"></i>
                     </button>
-                    <a href="login.html" class="btn btn-outline-primary px-4">Login</a>
-                    <a href="register.html" class="btn btn-primary px-4">Register</a>
+                    <a href="auth.html" class="btn btn-primary px-4 rounded-pill fw-bold">Get Started</a>
                 </div>
             </div>
         </div>
@@ -106,8 +131,7 @@
                 <li class="nav-item"><a class="nav-link py-3 border-bottom" href="dashboard.html">Dashboard</a></li>
             </ul>
             <div class="d-grid gap-2">
-                <a href="login.html" class="btn btn-outline-primary">Login</a>
-                <a href="register.html" class="btn btn-primary">Register</a>
+                <a href="auth.html" class="btn btn-primary rounded-pill fw-bold py-3">Get Started</a>
                 <button class="btn btn-outline-secondary" id="offcanvasThemeToggle">
                     <i class="bi bi-moon-stars-fill me-2"></i> Toggle Dark / Light Mode
                 </button>
@@ -127,56 +151,56 @@
     <main class="container py-5">
         <div class="row g-4">
             <!-- AI Tools -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="category-card" onclick="location.href='explore.html?cat=ai'">
                     <i class="bi bi-cpu category-icon"></i>
                     <h3 class="h5 mb-0">AI Tools</h3>
                 </div>
             </div>
             <!-- Design -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="category-card" onclick="location.href='explore.html?cat=design'">
                     <i class="bi bi-palette category-icon"></i>
                     <h3 class="h5 mb-0">Design Tools</h3>
                 </div>
             </div>
             <!-- Productivity -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="category-card" onclick="location.href='explore.html?cat=productivity'">
                     <i class="bi bi-lightning-charge category-icon"></i>
                     <h3 class="h5 mb-0">Productivity</h3>
                 </div>
             </div>
             <!-- Developer -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="category-card" onclick="location.href='explore.html?cat=dev'">
                     <i class="bi bi-code-slash category-icon"></i>
                     <h3 class="h5 mb-0">Developer</h3>
                 </div>
             </div>
             <!-- Entertainment -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="category-card" onclick="location.href='explore.html?cat=entertainment'">
                     <i class="bi bi-controller category-icon"></i>
                     <h3 class="h5 mb-0">Entertainment</h3>
                 </div>
             </div>
             <!-- Education -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="category-card" onclick="location.href='explore.html?cat=education'">
                     <i class="bi bi-book category-icon"></i>
                     <h3 class="h5 mb-0">Education</h3>
                 </div>
             </div>
             <!-- Finance -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="category-card" onclick="location.href='explore.html?cat=finance'">
                     <i class="bi bi-bank category-icon"></i>
                     <h3 class="h5 mb-0">Finance</h3>
                 </div>
             </div>
             <!-- Marketing -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="category-card" onclick="location.href='explore.html?cat=marketing'">
                     <i class="bi bi-megaphone category-icon"></i>
                     <h3 class="h5 mb-0">Marketing</h3>
@@ -238,7 +262,7 @@
                         <div class="d-flex align-items-start gap-3">
                             <i class="bi bi-window-sidebar fs-1 text-primary"></i>
                             <div>
-                                <h4 class="fw-bold">UI/UX & Design Systems</h4>
+                                <h4 class="fw-bold">UI/UX & Design</h4>
                                 <p class="text-secondary">Access a library of figma plugins, design tokens, and accessibility tools for modern product design.</p>
                                 <a href="#" class="text-primary fw-600 text-decoration-none d-inline-flex align-items-center gap-2">Browse 120+ Apps <i class="bi bi-arrow-right"></i></a>
                             </div>

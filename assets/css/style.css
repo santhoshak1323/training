@@ -136,6 +136,25 @@ a {
     gap: 10px;
 }
 
+.navbar-toggler {
+    padding: 0.35rem 0.5rem;
+    flex-shrink: 0;
+}
+
+.offcanvas {
+    z-index: 1080;
+}
+
+.offcanvas-backdrop {
+    z-index: 1075;
+}
+
+.offcanvas .btn-primary {
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 999px;
+}
+
 .nav-link {
     font-weight: 500;
     color: var(--text-secondary) !important;
@@ -612,6 +631,12 @@ footer .d-flex.gap-3 a:hover {
     padding: 20px 0;
 }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+    .category-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
 .category-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -836,6 +861,10 @@ footer .d-flex.gap-3 a:hover {
     grid-row: span 2;
 }
 
+.grid-item.wide {
+    grid-column: span 2;
+}
+
 .grid-content {
     position: absolute;
     inset: 0;
@@ -888,6 +917,9 @@ footer .d-flex.gap-3 a:hover {
     }
     .grid-item.large {
         grid-row: span 1;
+    }
+    .grid-item.wide {
+        grid-column: span 1;
     }
 }
 
@@ -982,7 +1014,7 @@ footer .d-flex.gap-3 a:hover {
 /* Featured Collections Section */
 .collections-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
@@ -1030,6 +1062,11 @@ footer .d-flex.gap-3 a:hover {
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
+.collection-overlay p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
 .collection-card:hover {
     transform: translateY(-15px);
     box-shadow: 0 30px 60px rgba(0,0,0,0.2);
@@ -1052,6 +1089,12 @@ footer .d-flex.gap-3 a:hover {
     font-size: 0.8rem;
     font-weight: 600;
     color: white;
+}
+
+@media (max-width: 1200px) {
+    .collections-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 768px) {
@@ -1325,6 +1368,54 @@ footer .d-flex.gap-3 a:hover {
     .collection-card { height: 300px; }
 }
 
+@media (max-width: 360px) {
+    body {
+        padding-top: 72px;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: nowrap;
+    }
+
+    .navbar-brand {
+        font-size: 0.9rem;
+        gap: 6px;
+        min-width: 0;
+    }
+
+    .navbar-brand i {
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+
+    .offcanvas.offcanvas-end {
+        width: min(100vw, 320px);
+    }
+
+    .offcanvas-header,
+    .offcanvas-body {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .offcanvas .nav-link {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+}
+
 /* 3D Industry Scene */
 .industry-3d-scene-wrapper {
     perspective: 2000px;
@@ -1411,5 +1502,3 @@ footer .d-flex.gap-3 a:hover {
     .card-4 { transform: rotateY(216deg) translateZ(180px); }
     .card-5 { transform: rotateY(288deg) translateZ(180px); }
 }
-
-

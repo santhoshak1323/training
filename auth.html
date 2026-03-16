@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started | WebStore Hub</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --auth-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --bg-light: #f8fafc;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        @media (max-width: 991px) {
+            body {
+                overflow-y: auto;
+                height: auto;
+            }
+        }
+
+        .auth-wrapper {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        @media (max-width: 991px) {
+            .auth-wrapper {
+                flex-direction: column;
+                height: auto;
+            }
+        }
+
+        /* Left Side: Gradient and Illustration */
+        .auth-side-brand {
+            flex: 1;
+            background: var(--auth-gradient);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        @media (max-width: 991px) {
+            .auth-side-brand {
+                height: auto;
+                padding: 60px 20px;
+            }
+        }
+
+        .brand-content {
+            z-index: 2;
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .brand-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .brand-logo-icon {
+            background: rgba(255, 255, 255, 0.2);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Animated shapes */
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            z-index: 1;
+            animation: float 20s infinite linear;
+        }
+
+        .shape-1 { width: 300px; height: 300px; top: -100px; left: -100px; }
+        .shape-2 { width: 200px; height: 200px; bottom: -50px; right: -50px; animation-duration: 25s; }
+        .shape-3 { width: 150px; height: 150px; top: 20%; right: 10%; animation-duration: 30s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-50px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+
+        /* Right Side: Forms */
+        .auth-side-form {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            position: relative;
+            height: 100vh;
+        }
+
+        @media (max-width: 991px) {
+            .auth-side-form {
+                height: auto;
+                padding: 40px 20px;
+            }
+        }
+
+        .glass-card {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 5;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+        }
+
+        @media (max-width: 576px) {
+            .glass-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+        }
+
+        .form-section {
+            position: absolute;
+            width: calc(100% - 6rem);
+            top: 3rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Transition States */
+        .form-section.active {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            top: 0;
+            width: 100%;
+        }
+
+        .form-section.login-section {
+            transform: translateX(0);
+        }
+        .form-section.signup-section {
+            transform: translateX(50px);
+        }
+
+        .form-container {
+            position: relative;
+            min-height: 480px;
+        }
+
+        .auth-form {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(20px);
+        }
+
+        body.login-active .login-form {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateX(0);
+            position: relative;
+        }
+
+        body.signup-active .signup-form {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateX(0);
+            position: relative;
+        }
+
+        body.signup-active .login-form {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(-20px);
+            position: absolute;
+        }
+
+        body.login-active .signup-form {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(20px);
+            position: absolute;
+        }
+
+        /* Form styling */
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .input-group-custom {
+            position: relative;
+            margin-bottom: 1.25rem;
+        }
+
+        .input-group-custom i {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            z-index: 10;
+        }
+
+        .input-group-custom .form-control {
+            padding: 0.8rem 3rem 0.8rem 3rem;
+            border-radius: 12px;
+            background: white;
+            border: 1.5px solid var(--border-color);
+            transition: all 0.3s ease;
+            height: 52px;
+        }
+
+        .input-group-custom .form-control:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #94a3b8;
+            z-index: 10;
+            border: none;
+            background: none;
+            padding: 0;
+            transition: color 0.3s ease;
+        }
+
+        .password-toggle:hover {
+            color: #6366f1;
+        }
+
+        .btn-auth {
+            background: var(--auth-gradient);
+            border: none;
+            color: white;
+            padding: 0.8rem;
+            font-weight: 600;
+            border-radius: 12px;
+            width: 100%;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-auth:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
+            color: white;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .divider:not(:empty)::before { margin-right: 1rem; }
+        .divider:not(:empty)::after { margin-left: 1rem; }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem;
+            border-radius: 12px;
+            border: 1.5px solid var(--border-color);
+            background: var(--bg-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .social-item:hover {
+            border-color: #6366f1;
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .theme-switch-container {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            z-index: 100;
+        }
+
+        .back-home {
+            display: none;
+        }
+
+        /* Dark Mode overrides */
+        [data-bs-theme="dark"] .glass-card {
+            background: rgba(15, 23, 42, 0.8);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="login-active">
+
+
+
+
+
+    <div class="auth-wrapper">
+        <!-- Left Side -->
+        <div class="auth-side-brand">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+
+            <div class="brand-content">
+                <a href="index.html" class="brand-logo">
+                    <div class="brand-logo-icon">
+                        <i class="bi bi-grid-fill"></i>
+                    </div>
+                    WebStore Hub
+                </a>
+                <h1 class="display-6 fw-bold mb-4">The ultimate directory for web tools.</h1>
+                <p class="lead opacity-75">Connect with thousands of tools, resources, and developers around the world.</p>
+                
+                <div class="mt-5 text-start">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="bg-white rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="bi bi-shield-check text-primary fs-5"></i>
+                        </div>
+                        <p class="mb-0 fw-medium">Secure & Verified Resources</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="bg-white rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="bi bi-people text-primary fs-5"></i>
+                        </div>
+                        <p class="mb-0 fw-medium">Join 50k+ Creators</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="bg-white rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="bi bi-star text-primary fs-5"></i>
+                        </div>
+                        <p class="mb-0 fw-medium">Top Rated Community</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="auth-side-form">
+            <div class="glass-card" id="authCard">
+                <div class="form-container">
+                    <!-- Login Form -->
+                    <div class="login-form auth-form" id="loginForm">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold h3 mb-1">Welcome Back</h2>
+                            <p class="text-secondary small">Grow your project with the best tools.</p>
+                        </div>
+
+                        <form action="dashboard.html">
+                            <div class="input-group-custom">
+                                <i class="bi bi-envelope"></i>
+                                <input type="email" class="form-control" placeholder="Email address" required>
+                            </div>
+                            <div class="input-group-custom">
+                                <i class="bi bi-lock"></i>
+                                <input type="password" class="form-control" placeholder="Password" required>
+                                <button type="button" class="password-toggle">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                                    <label class="form-check-label small text-secondary" for="rememberMe">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <a href="#" class="small text-primary text-decoration-none fw-medium">Forgot Password?</a>
+                            </div>
+
+                            <button type="submit" class="btn btn-auth">Login to Account</button>
+                        </form>
+
+                        <div class="divider">OR CONTINUE WITH</div>
+
+                        <div class="social-grid">
+                            <a href="#" class="social-item"><i class="bi bi-google"></i></a>
+                            <a href="#" class="social-item"><i class="bi bi-github"></i></a>
+                            <a href="#" class="social-item"><i class="bi bi-twitter-x"></i></a>
+                        </div>
+
+                        <p class="text-center mt-3 mb-0 small text-secondary">
+                            Don't have an account? <a href="javascript:void(0)" class="text-primary fw-bold text-decoration-none" id="toSignup">Sign up for free</a>
+                        </p>
+                    </div>
+
+                    <!-- Sign Up Form -->
+                    <div class="signup-form auth-form" id="signupForm">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold h3 mb-1">Create Account</h2>
+                            <p class="text-secondary small">Start your journey with us today.</p>
+                        </div>
+
+                        <form action="dashboard.html">
+                            <div class="input-group-custom">
+                                <i class="bi bi-person"></i>
+                                <input type="text" class="form-control" placeholder="Full name" required>
+                            </div>
+                            <div class="input-group-custom">
+                                <i class="bi bi-envelope"></i>
+                                <input type="email" class="form-control" placeholder="Email address" required>
+                            </div>
+                            <div class="input-group-custom">
+                                <i class="bi bi-lock"></i>
+                                <input type="password" class="form-control" placeholder="Password" required>
+                                <button type="button" class="password-toggle">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+                            <div class="input-group-custom">
+                                <i class="bi bi-shield-lock"></i>
+                                <input type="password" class="form-control" placeholder="Confirm password" required>
+                                <button type="button" class="password-toggle">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="terms" required>
+                                <label class="form-check-label small text-secondary" for="terms">
+                                    I agree to the <a href="#" class="text-primary text-decoration-none">Terms of Service</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-auth">Create Account</button>
+                        </form>
+
+                        <p class="text-center mt-3 mb-0 small text-secondary">
+                            Already have an account? <a href="javascript:void(0)" class="text-primary fw-bold text-decoration-none" id="toLogin">Login</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Form Switching Logic
+        const toSignup = document.getElementById('toSignup');
+        const toLogin = document.getElementById('toLogin');
+        const body = document.body;
+
+        toSignup.addEventListener('click', () => {
+            body.classList.remove('login-active');
+            body.classList.add('signup-active');
+        });
+
+        toLogin.addEventListener('click', () => {
+            body.classList.remove('signup-active');
+            body.classList.add('login-active');
+        });
+
+        // Show/Hide Password Toggle
+        const passwordToggles = document.querySelectorAll('.password-toggle');
+        passwordToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const input = toggle.parentElement.querySelector('input');
+                const icon = toggle.querySelector('i');
+                
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.replace('bi-eye', 'bi-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.replace('bi-eye-slash', 'bi-eye');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
