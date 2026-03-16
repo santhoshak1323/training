@@ -44,10 +44,15 @@
 <body>
 
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-xl fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><i class="bi bi-grid-fill"></i> WebStore Hub</a>
-            <div class="collapse navbar-collapse">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-grid-fill"></i> WebStore Hub
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,9 +69,47 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                 </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link nav-link px-0" id="themeToggle">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                    <a href="auth.html" class="btn btn-primary px-4 rounded-pill fw-bold">Get Started</a>
+                </div>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold">WebStore Hub</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle py-3 border-bottom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Home
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm bg-light">
+                        <li><a class="dropdown-item" href="index.html">Classic Directory</a></li>
+                        <li><a class="dropdown-item" href="home2.html">Modern Marketplace</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="explore.html">Explore</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="service.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <div class="d-grid gap-2">
+                <a href="auth.html" class="btn btn-primary rounded-pill fw-bold py-3">Get Started</a>
+                <button class="btn btn-outline-secondary" id="offcanvasThemeToggle">
+                    <i class="bi bi-moon-stars-fill me-2"></i> Toggle Dark / Light Mode
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- App Header -->
     <header class="details-header">
@@ -97,7 +140,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <h3 class="fw-bold mb-4">Preview</h3>
-                <img src="assets/images/saas_product_preview.png" class="preview-image" alt="ChatGPT Preview">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&auto=format&fit=crop" class="preview-image" alt="ChatGPT Preview">
                 
                 <h3 class="fw-bold mb-3">About this website</h3>
                 <p class="text-secondary mb-4" style="line-height: 1.8;">
@@ -113,28 +156,6 @@
                     <li class="mb-2">Content creation, editing, and summarization.</li>
                     <li class="mb-2">Advanced reasoning and problem-solving capabilities.</li>
                 </ul>
-
-                <hr class="my-5 border-color">
-
-                <h3 class="fw-bold mb-4">Similar Websites</h3>
-                <div class="scroll-container">
-                    <!-- Similar Cards -->
-                    <div class="website-card" style="min-width: 240px;">
-                         <img src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?w=400" class="card-img-top" alt="Midjourney">
-                         <div class="card-body">
-                             <h6 class="fw-bold">Midjourney</h6>
-                             <p class="small text-secondary mb-0">AI Image Generation</p>
-                         </div>
-                    </div>
-                    <!-- More -->
-                     <div class="website-card" style="min-width: 240px;">
-                         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400" class="card-img-top" alt="Claude">
-                         <div class="card-body">
-                             <h6 class="fw-bold">Claude AI</h6>
-                             <p class="small text-secondary mb-0">Helpful & Safe AI</p>
-                         </div>
-                    </div>
-                </div>
             </div>
             
             <div class="col-lg-4 mt-5 mt-lg-0">
@@ -162,11 +183,50 @@
             </div>
         </div>
     </main>
-
     <!-- Footer -->
     <footer>
-        <div class="container text-center">
-            <p>Â© 2026 WebStore Hub. All rights reserved.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <a class="navbar-brand mb-3 d-inline-block" href="index.html">
+                        <i class="bi bi-grid-fill"></i> WebStore Hub
+                    </a>
+                    <p class="text-secondary small">Your ultimate destination to discover and explore the world's most popular websites and tools.</p>
+                    <div class="d-flex gap-3 fs-5 mt-3">
+                        <a href="#" class="text-secondary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Top Categories</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">AI Tools</a></li>
+                        <li><a href="#">Productivity</a></li>
+                        <li><a href="#">Design Tools</a></li>
+                        <li><a href="#">Developer Tools</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="text-secondary small mb-3">Subscribe to get new tools directly in your inbox.</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 border-color">
+            <p class="text-center text-secondary small mb-0">� 2026 WebStore Hub. All rights reserved.</p>
         </div>
     </footer>
 
@@ -180,3 +240,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

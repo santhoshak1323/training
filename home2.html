@@ -92,10 +92,19 @@
         @media (max-width: 991px) {
             .home2-hero { padding: 80px 0; min-height: auto; text-align: center; background-attachment: scroll !important; }
             .hero-content .d-flex { justify-content: center; }
-            .hero-glass-composition { height: 320px; margin-top: 50px; }
-            .float-1 { top: 0; left: 5%; width: 140px; }
-            .float-2 { top: 35%; left: 15%; width: 180px; }
-            .float-3 { bottom: 0; right: 5%; width: 130px; }
+            .hero-content { max-width: 620px; margin: 0 auto; }
+            .hero-glass-composition {
+                height: 240px;
+                margin-top: 56px;
+                overflow: hidden;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+            }
+            .glass-float { padding: 16px; }
+            .float-1 { top: 0; left: 8%; width: 118px; }
+            .float-2 { top: 96px; left: 50%; width: 156px; transform: translateX(-50%); }
+            .float-3 { top: 128px; right: 8%; bottom: auto; width: 108px; }
         }
 
         @media (max-width: 576px) {
