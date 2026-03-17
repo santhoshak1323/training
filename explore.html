@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,15 +18,18 @@
             border-color: rgba(255, 255, 255, 0.28) !important;
             background-color: rgba(255, 255, 255, 0.04);
         }
+
         [data-bs-theme="dark"] .explore-filter-btn:hover,
         [data-bs-theme="dark"] .explore-filter-btn:focus {
             color: #ffffff;
             border-color: rgba(255, 255, 255, 0.48) !important;
             background-color: rgba(255, 255, 255, 0.08);
         }
+
         [data-bs-theme="dark"] .explore-sort-label {
             color: rgba(255, 255, 255, 0.78) !important;
         }
+
         [data-bs-theme="dark"] .explore-sort-select {
             color: #ffffff !important;
             border-color: rgba(255, 255, 255, 0.22) !important;
@@ -43,6 +47,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Header -->
@@ -52,13 +57,15 @@
                 <i class="bi bi-grid-fill"></i>
                 WebStore Hub
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Home
                         </a>
                         <ul class="dropdown-menu border-0 shadow-sm">
@@ -70,7 +77,7 @@
                     <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+
                 </ul>
                 <div class="d-flex align-items-center gap-3">
                     <button class="btn btn-link nav-link px-0" id="themeToggle">
@@ -91,7 +98,8 @@
         <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-4">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle py-3 border-bottom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle py-3 border-bottom" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         Home
                     </a>
                     <ul class="dropdown-menu border-0 shadow-sm bg-light">
@@ -103,7 +111,7 @@
                 <li class="nav-item"><a class="nav-link py-3 border-bottom" href="service.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link py-3 border-bottom" href="categories.html">Categories</a></li>
                 <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link py-3 border-bottom" href="dashboard.html">Dashboard</a></li>
+
             </ul>
             <div class="d-grid gap-2">
                 <a href="auth.html" class="btn btn-primary rounded-pill fw-bold py-3">Get Started</a>
@@ -122,33 +130,45 @@
         overflow: hidden;
     ">
         <!-- Subtle background glow blobs -->
-        <div style="position:absolute;width:400px;height:400px;background:var(--brand-primary);border-radius:50%;filter:blur(100px);opacity:0.15;top:-100px;right:-80px;pointer-events:none;"></div>
-        <div style="position:absolute;width:300px;height:300px;background:var(--brand-accent);border-radius:50%;filter:blur(100px);opacity:0.1;bottom:-80px;left:-60px;pointer-events:none;"></div>
+        <div
+            style="position:absolute;width:400px;height:400px;background:var(--brand-primary);border-radius:50%;filter:blur(100px);opacity:0.15;top:-100px;right:-80px;pointer-events:none;">
+        </div>
+        <div
+            style="position:absolute;width:300px;height:300px;background:var(--brand-accent);border-radius:50%;filter:blur(100px);opacity:0.1;bottom:-80px;left:-60px;pointer-events:none;">
+        </div>
 
         <div class="container text-center" style="position:relative;z-index:2;">
-            <span class="badge rounded-pill px-3 py-2 mb-3 d-inline-block" style="background:rgba(37,99,235,0.2);color:#60a5fa;border:1px solid rgba(37,99,235,0.3);font-size:0.8rem;letter-spacing:1px;">DISCOVER</span>
-            <h1 class="fw-bold mb-3" style="color:white;font-size:clamp(1.8rem,4vw,3rem);">Explore Websites</h1>
-            <p style="color:rgba(255,255,255,0.6);max-width:520px;margin:0 auto;font-size:1rem;">Discover thousands of amazing websites and tools curated just for you.</p>
+            <span class="badge rounded-pill px-3 py-2 mb-3 d-inline-block"
+                style="background:rgba(37,99,235,0.2);color:#60a5fa;border:1px solid rgba(37,99,235,0.3);font-size:0.8rem;letter-spacing:1px;">DISCOVER</span>
+            <h1 class="fw-bold mb-3" style="color:white;font-size:clamp(1.8rem,4vw,3rem);">Explore Apps</h1>
+            <p style="color:rgba(255,255,255,0.6);max-width:520px;margin:0 auto;font-size:1rem;">Discover thousands of
+                amazing apps and tools curated just for you.</p>
         </div>
     </section>
 
     <!-- Main Content -->
     <main class="container py-5">
-        
+
         <!-- Filters and Sorting -->
         <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-4 mb-5">
             <div class="d-flex gap-2 overflow-x-auto pb-2 pb-md-0 category-filters" style="scrollbar-width: none;">
                 <button class="btn btn-primary btn-sm rounded-pill px-3">All</button>
-                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color explore-filter-btn">AI Tools</button>
-                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color explore-filter-btn">Design</button>
-                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color explore-filter-btn">Developer</button>
-                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color explore-filter-btn">Productivity</button>
-                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color explore-filter-btn">Entertainment</button>
+                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color explore-filter-btn">AI
+                    Tools</button>
+                <button
+                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color explore-filter-btn">Design</button>
+                <button
+                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color explore-filter-btn">Developer</button>
+                <button
+                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color explore-filter-btn">Productivity</button>
+                <button
+                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-color explore-filter-btn">Entertainment</button>
             </div>
-            
+
             <div class="d-flex align-items-center gap-2">
                 <span class="text-secondary small fw-medium text-nowrap explore-sort-label">Sort By:</span>
-                <select class="form-select form-select-sm border-color rounded-pill px-3 explore-sort-select" style="width: 140px;">
+                <select class="form-select form-select-sm border-color rounded-pill px-3 explore-sort-select"
+                    style="width: 140px;">
                     <option selected>Trending</option>
                     <option>Newest</option>
                     <option>Top Rated</option>
@@ -157,235 +177,694 @@
         </div>
 
         <!-- Grid Layout -->
-        <div class="row g-4">
-            <!-- Website Cards (Repeat 8 times for demo) -->
-            <div class="col-lg-3 col-md-3 col-sm-6 reveal">
-                <div class="website-card w-100" onclick="location.href='website-details.html'">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="ChatGPT">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category">AI Tool</div>
-                        <h5 class="card-title">ChatGPT</h5>
-                        <p class="card-description">Advanced AI language model for conversation and automation.</p>
-                        <div class="rating">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <button class="btn btn-outline-primary w-100">Visit Website</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Repeat -->
-            <div class="col-lg-3 col-md-3 col-sm-6 reveal">
-                <div class="website-card w-100" onclick="location.href='website-details.html'">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="Canva">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category">Design</div>
-                        <h5 class="card-title">Canva</h5>
-                        <p class="card-description">Create stunning graphics and designs with ease.</p>
-                        <div class="rating">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
-                        </div>
-                        <button class="btn btn-outline-primary w-100">Visit Website</button>
-                    </div>
-                </div>
-            </div>
-            <!-- ... more cards ... -->
-            <!-- Adding more cards for grid feel -->
-            <div class="col-lg-3 col-md-3 col-sm-6 reveal">
-                <div class="website-card w-100" onclick="location.href='website-details.html'">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="Notion">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category">Productivity</div>
-                        <h5 class="card-title">Notion</h5>
-                        <p class="card-description">All-in-one workspace for notes, tasks, and collaboration.</p>
-                        <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                        <button class="btn btn-outline-primary w-100">Visit Website</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 reveal">
-                <div class="website-card w-100" onclick="location.href='website-details.html'">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="GitHub">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category">Developer</div>
-                        <h5 class="card-title">GitHub</h5>
-                        <p class="card-description">Host and review code, manage projects, and build software.</p>
-                        <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                        <button class="btn btn-outline-primary w-100">Visit Website</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Row 2 -->
-             <div class="col-lg-3 col-md-3 col-sm-6 reveal">
-                <div class="website-card w-100" onclick="location.href='website-details.html'">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="Spotify">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category">Entertainment</div>
-                        <h5 class="card-title">Spotify</h5>
-                        <p class="card-description">Listen to the latest music and podcasts worldwide.</p>
-                        <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
-                        <button class="btn btn-outline-primary w-100">Visit Website</button>
-                    </div>
-                </div>
-            </div>
-             <div class="col-lg-3 col-md-3 col-sm-6 reveal">
-                <div class="website-card w-100" onclick="location.href='website-details.html'">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="Figma">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category">Design</div>
-                        <h5 class="card-title">Figma</h5>
-                        <p class="card-description">The collaborative interface design tool for teams.</p>
-                        <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                        <button class="btn btn-outline-primary w-100">Visit Website</button>
-                    </div>
-                </div>
-            </div>
-             <div class="col-lg-3 col-md-3 col-sm-6 reveal">
-                <div class="website-card w-100" onclick="location.href='website-details.html'">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="Midjourney">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category">AI Tool</div>
-                        <h5 class="card-title">Midjourney</h5>
-                        <p class="card-description">Create realistic AI art and illustrations via Discord.</p>
-                        <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                        <button class="btn btn-outline-primary w-100">Visit Website</button>
-                    </div>
-                </div>
-            </div>
-             <div class="col-lg-3 col-md-3 col-sm-6 reveal">
-                <div class="website-card w-100" onclick="location.href='website-details.html'">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=500&auto=format&fit=crop" class="card-img-top w-100" alt="Netflix">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category">Entertainment</div>
-                        <h5 class="card-title">Netflix</h5>
-                        <p class="card-description">Stream movies and TV shows anytime, anywhere.</p>
-                        <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                        <button class="btn btn-outline-primary w-100">Visit Website</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pagination -->
-        <nav class="mt-5 mb-5 overflow-hidden">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled"><a class="page-link border-color rounded-start-pill px-4" href="#">Previous</a></li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link border-color rounded-end-pill px-4" href="#">Next</a></li>
-            </ul>
-        </nav>
-
-        <!-- New Section 1: Editors' Choices -->
-        <section class="mb-5 reveal">
-            <div class="section-title-wrapper mb-4">
-                <h2 class="h3 fw-bold m-0 border-start border-primary border-4 ps-3">Editors' Picks 2026</h2>
-                <p class="text-secondary mt-1">Hand-selected for peak performance and innovation.</p>
-            </div>
-            <div class="explore-featured-row">
-                <div class="featured-wide-card">
-                    <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=1200&auto=format&fit=crop" class="featured-bg" alt="Creative Suite">
-                    <div class="featured-content">
-                        <span class="feat-badge">Must-Have</span>
-                        <h3>Adobe Creative Cloud</h3>
-                        <p>The industry standard for creative professionals.</p>
-                        <button class="btn btn-primary btn-sm rounded-pill px-4">Visit Now</button>
-                    </div>
-                </div>
-                <div class="featured-side-col">
-                    <div class="feat-mini-card">
-                        <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=500&auto=format&fit=crop" alt="Slack">
-                        <div class="mini-content">
-                            <h6>Slack Messenger</h6>
-                            <p>Team communication made simple.</p>
-                        </div>
-                    </div>
-                    <div class="feat-mini-card mt-3">
-                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&auto=format&fit=crop" alt="Stripe">
-                        <div class="mini-content">
-                            <h6>Stripe Payments</h6>
-                            <p>Infrastructure for the internet economy.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- New Section 2: Coming Soon to Hub -->
-        <section class="mb-5 py-5 reveal">
-            <div class="row align-items-center bg-dark rounded-5 p-4 p-md-5 overflow-hidden position-relative">
-                <div class="col-lg-6 position-relative z-index-1">
-                    <span class="text-primary fw-bold text-uppercase ls-2">Future Tech</span>
-                    <h2 class="display-5 fw-bold text-white mt-2">Next Gen Tools Arriving Soon</h2>
-                    <p class="text-white-50 lead mb-4">Be the first to know about upcoming platforms and early access betas.</p>
-                    <div class="d-flex gap-3">
-                        <div class="upcoming-item">
-                            <div class="up-icon bg-primary bg-opacity-10"><i class="bi bi-cpu"></i></div>
-                            <span class="text-white small">Quantum Dev Kit</span>
-                        </div>
-                        <div class="upcoming-item">
-                            <div class="up-icon bg-info bg-opacity-10"><i class="bi bi-box"></i></div>
-                            <span class="text-white small">VR Editor Pro</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-4 mt-lg-0">
-                    <div class="upcoming-visual">
-                         <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800&auto=format&fit=crop" class="rounded-4 img-fluid" alt="Future">
-                    </div>
-                </div>
-                <div class="decor-circle"></div>
-            </div>
-        </section>
-
-        <!-- New Section 3: Community Spotlight -->
+        <!-- Section 1: Social Media Hub -->
         <section class="mb-5 reveal">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="h4 m-0 fw-bold">Community Favorites</h2>
-                <a href="#" class="text-primary small fw-bold">Post a Website <i class="bi bi-plus-lg"></i></a>
+                <h2 class="h4 m-0 fw-bold border-start border-primary border-4 ps-3">Social Media Hub</h2>
+                <a href="categories.html" class="btn btn-link btn-sm text-primary fw-bold text-decoration-none p-0">See
+                    all</a>
             </div>
             <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="community-highlight-card">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&auto=format&fit=crop" alt="Dev Tools">
-                        <div class="comm-overlay">
-                            <h5>Essential VS Code Extensions</h5>
-                            <p>Curated by Sarah Dev</p>
-                            <div class="btn btn-sm btn-light rounded-pill">View List</div>
+                <!-- Row 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Instagram">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Social</div>
+                            <h5 class="card-title">Instagram</h5>
+                            <p class="card-description">Share your photos and videos with friends and followers.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Visit Platform</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                     <div class="community-highlight-card">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&auto=format&fit=crop" alt="Team Work">
-                        <div class="comm-overlay">
-                            <h5>Top SaaS for Remote Teams</h5>
-                            <p>Curated by Mike CEO</p>
-                            <div class="btn btn-sm btn-light rounded-pill">View List</div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Twitter X">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Social</div>
+                            <h5 class="card-title">X (Twitter)</h5>
+                            <p class="card-description">Stay updated with real-time news and global conversations.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-half"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Visit Platform</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="LinkedIn">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Professional</div>
+                            <h5 class="card-title">LinkedIn</h5>
+                            <p class="card-description">Connect with professionals and grow your career network.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Visit Platform</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1596558450255-7c0b7be9d56a?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="TikTok">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Video</div>
+                            <h5 class="card-title">TikTok</h5>
+                            <p class="card-description">Discover and create short, engaging mobile videos.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-half"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Visit Platform</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Facebook">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Social</div>
+                            <h5 class="card-title">Facebook</h5>
+                            <p class="card-description">Connect with friends, family and other people you know.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Visit Platform</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1595147389795-37094173bfd8?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Discord">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Communication</div>
+                            <h5 class="card-title">Discord</h5>
+                            <p class="card-description">Talk, chat, hang out, and stay close with your friends.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Visit Platform</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Education & Learning -->
+        <section class="mb-5 reveal">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h4 m-0 fw-bold border-start border-success border-4 ps-3">Education & Learning</h2>
+                <a href="categories.html" class="btn btn-link btn-sm text-primary fw-bold text-decoration-none p-0">See
+                    all</a>
+            </div>
+            <div class="row g-4">
+                <!-- Row 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Coursera">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">e-Learning</div>
+                            <h5 class="card-title">Coursera</h5>
+                            <p class="card-description">Learn without limits with top degrees and certificates.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Explore Courses</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Udemy">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Courses</div>
+                            <h5 class="card-title">Udemy</h5>
+                            <p class="card-description">Choose from over 213,000 online video courses.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-half"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Start Learning</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Duolingo">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Languages</div>
+                            <h5 class="card-title">Duolingo</h5>
+                            <p class="card-description">The world's #1 way to learn a language for free.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Start Project</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Khan Academy">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">K-12</div>
+                            <h5 class="card-title">Khan Academy</h5>
+                            <p class="card-description">Free online courses, lessons & practice for anyone.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Learn Anything</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="MasterClass">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Premium</div>
+                            <h5 class="card-title">MasterClass</h5>
+                            <p class="card-description">Learn from the world's best performers and experts.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Join Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Codecademy">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Coding</div>
+                            <h5 class="card-title">Codecademy</h5>
+                            <p class="card-description">The easiest way to learn how to code online interactively.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-half"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Start Coding</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Developer Universe -->
+        <section class="mb-5 reveal">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h4 m-0 fw-bold border-start border-accent border-4 ps-3">Developer Universe</h2>
+                <a href="categories.html" class="btn btn-link btn-sm text-primary fw-bold text-decoration-none p-0">See
+                    all</a>
+            </div>
+            <div class="row g-4">
+                <!-- Row 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="GitHub">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Version Control</div>
+                            <h5 class="card-title">GitHub</h5>
+                            <p class="card-description">The world's leading AI-powered developer platform.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Go to GitHub</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Stack Overflow">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Community</div>
+                            <h5 class="card-title">Stack Overflow</h5>
+                            <p class="card-description">Public platform building the definitive collection of coding
+                                Q&A.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Get Help</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Vercel">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Deployment</div>
+                            <h5 class="card-title">Vercel</h5>
+                            <p class="card-description">Develop. Preview. Ship. The platform for frontend developers.
+                            </p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Deploy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Netlify">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Hosting</div>
+                            <h5 class="card-title">Netlify</h5>
+                            <p class="card-description">Build, deploy and scale modern web projects quickly.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-half"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Start Building</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="VS Code">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">IDE</div>
+                            <h5 class="card-title">VS Code (Web)</h5>
+                            <p class="card-description">Visual Studio Code for the Web. Code from anywhere.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Open Editor</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Python">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Resources</div>
+                            <h5 class="card-title">Python Docs</h5>
+                            <p class="card-description">Official documentation and guides for Python programming.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Learn Python</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Productivity Suite -->
+        <section class="mb-5 reveal">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h4 m-0 fw-bold border-start border-warning border-4 ps-3">Productivity Suite</h2>
+                <a href="categories.html" class="btn btn-link btn-sm text-primary fw-bold text-decoration-none p-0">See
+                    all</a>
+            </div>
+            <div class="row g-4">
+                <!-- Row 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Notion">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Workspace</div>
+                            <h5 class="card-title">Notion</h5>
+                            <p class="card-description">All-in-one workspace for notes, tasks, and wikis.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1590650046871-92c887180603?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Slack">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Teamwork</div>
+                            <h5 class="card-title">Slack</h5>
+                            <p class="card-description">Slack is a new way to communicate with your team.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Launch Slack</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Trello">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Planning</div>
+                            <h5 class="card-title">Trello</h5>
+                            <p class="card-description">Collaborate, manage projects and reach new productivity peaks.
+                            </p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-half"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Organize Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Evernote">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Notes</div>
+                            <h5 class="card-title">Evernote</h5>
+                            <p class="card-description">Tame your work, organize your life. Remember everything.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Capture Idea</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="ClickUp">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Management</div>
+                            <h5 class="card-title">ClickUp</h5>
+                            <p class="card-description">The world's highest-rated project management tool.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Plan Project</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Asana">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Collaboration</div>
+                            <h5 class="card-title">Asana</h5>
+                            <p class="card-description">The best way to manage team projects and tasks.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Entertainment & Fun -->
+        <section class="mb-5 reveal">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h4 m-0 fw-bold border-start border-info border-4 ps-3">Entertainment & Fun</h2>
+                <a href="categories.html" class="btn btn-link btn-sm text-primary fw-bold text-decoration-none p-0">See
+                    all</a>
+            </div>
+            <div class="row g-4">
+                <!-- Row 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Netflix">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Streaming</div>
+                            <h5 class="card-title">Netflix</h5>
+                            <p class="card-description">Stream unlimited movies and TV shows on any device.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Watch Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Spotify">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Music</div>
+                            <h5 class="card-title">Spotify</h5>
+                            <p class="card-description">Listen to millions of songs and podcasts without ads.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Listen Live</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="YouTube">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Video</div>
+                            <h5 class="card-title">YouTube</h5>
+                            <p class="card-description">Discover the latest videos from around the world.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Explore Videos</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Twitch">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Gaming</div>
+                            <h5 class="card-title">Twitch</h5>
+                            <p class="card-description">Join the world's leading live streaming gaming platform.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-half"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Watch Live</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1533488765986-dfa2a9939acd?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Disney+">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Streaming</div>
+                            <h5 class="card-title">Disney+</h5>
+                            <p class="card-description">The best stories in the world, all in one place.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Start Project</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Crunchyroll">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Anime</div>
+                            <h5 class="card-title">Crunchyroll</h5>
+                            <p class="card-description">Stream the world's largest anime library online.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Watch Anime</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Games Central -->
+        <section class="mb-5 reveal">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h4 m-0 fw-bold border-start border-danger border-4 ps-3">Games Central</h2>
+                <a href="categories.html" class="btn btn-link btn-sm text-primary fw-bold text-decoration-none p-0">See
+                    all</a>
+            </div>
+            <div class="row g-4">
+                <!-- Row 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Minecraft">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Creative</div>
+                            <h5 class="card-title">Minecraft</h5>
+                            <p class="card-description">Exploration and creation in an infinite blocky world.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="League of Legends">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">MOBA</div>
+                            <h5 class="card-title">League of Legends</h5>
+                            <p class="card-description">A fast-paced, competitive online team-based strategy game.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-half"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Join the Battle</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Valorant">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Shooter</div>
+                            <h5 class="card-title">Valorant</h5>
+                            <p class="card-description">A 5v5 character-based tactical shooter by Riot Games.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Start Training</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Among Us">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Strategy</div>
+                            <h5 class="card-title">Among Us</h5>
+                            <p class="card-description">Discovery, team building, and betrayal among space crew.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Find Impostor</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Roblox">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Universe</div>
+                            <h5 class="card-title">Roblox</h5>
+                            <p class="card-description">Experience trillions of unique user-generated worlds.</p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Jump In</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="website-card w-100" onclick="location.href='website-details.html'">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop"
+                                class="card-img-top w-100" alt="Fortnite">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">Battle Royale</div>
+                            <h5 class="card-title">Fortnite</h5>
+                            <p class="card-description">Build and battle to be the last one standing in a huge world.
+                            </p>
+                            <div class="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i></div>
+                            <button class="btn btn-outline-primary w-100 mt-auto">Drop In</button>
                         </div>
                     </div>
                 </div>
@@ -401,7 +880,8 @@
                     <a class="navbar-brand mb-3 d-inline-block" href="#">
                         <i class="bi bi-grid-fill"></i> WebStore Hub
                     </a>
-                    <p class="text-secondary small">Your ultimate destination to discover and explore the world's most popular websites and tools.</p>
+                    <p class="text-secondary small">Your ultimate destination to discover and explore the world's most
+                        popular websites and tools.</p>
                     <div class="d-flex gap-3 fs-5 mt-3">
                         <a href="#" class="text-secondary"><i class="bi bi-twitter-x"></i></a>
                         <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
@@ -414,7 +894,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="explore.html">Explore</a></li>
                         <li><a href="categories.html">Categories</a></li>
-                        <li><a href="dashboard.html">Dashboard</a></li>
+
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
@@ -449,4 +929,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

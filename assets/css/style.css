@@ -457,6 +457,9 @@ a {
     min-width: 0;
     max-width: 100%;
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .website-card:hover {
@@ -502,6 +505,9 @@ a {
 
 .card-body {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .card-category {
@@ -621,6 +627,10 @@ footer .d-flex.gap-3 a:hover {
     justify-content: center;
     box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
     z-index: 1000;
+}
+
+.border-accent {
+    border-color: var(--brand-accent) !important;
 }
 
 /* Quick Categories Section */
